@@ -2,6 +2,11 @@
 
 A static, single-page field guide ranking Barnes & Noble locations in New Jersey and the lower Hudson Valley for trips from Brooklyn.
 
+Live sites:
+
+- Vercel: https://barnes-and-noble-field-guide.vercel.app/
+- GitHub Pages: https://dannysilitonga.github.io/barnes-and-noble-field-guide/
+
 The page can be opened directly in a browser. Phase 1 split the original single-file artifact into:
 
 - `index.html` for semantic page markup
@@ -33,4 +38,13 @@ node --check app.js
 python3 -m http.server 8765
 ```
 
-The site is Vercel-ready as a static project. If imported into Vercel, use the `barnes_and_noble/` directory as the project root with no build command and `.` as the output directory. Keep GitHub Pages live until Vercel is verified.
+## Deployment
+
+The site is deployed to Vercel as a static project with no build command and `.` as the output directory.
+
+```bash
+vercel deploy . --yes --no-wait --scope danny-silitongas-projects
+vercel inspect barnes-and-noble-field-guide.vercel.app --scope danny-silitongas-projects
+```
+
+Project-local Vercel agent skills are installed under `.agents/skills/` and locked in `skills-lock.json`.
