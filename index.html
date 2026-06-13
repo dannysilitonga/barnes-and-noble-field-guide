@@ -203,6 +203,33 @@
     tbody tr:hover td { background: var(--panel-2); }
     tbody tr.unscored td { color: var(--muted); }
     tbody tr:last-child td { border-bottom: 0; }
+    tbody tr.reveal-row:hover td { background: var(--panel); }
+    .reveal-row td { padding: 0; background: var(--panel); border-bottom: 0; }
+    .reveal-panel {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      padding: 16px 18px; border-top: 1px solid var(--line-soft);
+    }
+    .reveal-copy { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .reveal-copy b { display: block; color: var(--ink); font-size: 14px; font-weight: 600; }
+    .reveal-copy span { display: block; margin-top: 2px; }
+    .reveal-btn {
+      appearance: none; border: 1px solid var(--line); background: var(--panel);
+      color: var(--ink); border-radius: 8px; padding: 9px 13px; cursor: pointer;
+      font: inherit; font-size: 13px; font-weight: 700; line-height: 1.2; white-space: nowrap;
+      display: inline-flex; align-items: center; gap: 8px; transition: border-color 140ms ease, color 140ms ease, box-shadow 140ms ease;
+    }
+    .reveal-btn:hover { border-color: var(--accent); color: var(--accent-deep); box-shadow: var(--shadow-sm); }
+    .reveal-icon {
+      width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--line);
+      display: inline-flex; align-items: center; justify-content: center; color: var(--accent);
+      transition: transform 160ms ease, border-color 140ms ease;
+    }
+    .reveal-icon::before {
+      content: ""; width: 6px; height: 6px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+      transform: translateY(-1px) rotate(45deg);
+    }
+    .reveal-btn:hover .reveal-icon { border-color: var(--accent); }
+    .reveal-btn[aria-expanded="true"] .reveal-icon { transform: rotate(180deg); }
     .r { text-align: right; }
     .num { font-variant-numeric: tabular-nums; }
     .rank {
@@ -279,6 +306,11 @@
       .stats { grid-template-columns: 1fr 1fr; }
       .search { margin-left: 0; width: 100%; }
       .search input, .search input:focus { width: 100%; }
+      .reveal-panel {
+        align-items: flex-start; flex-direction: column; position: sticky; left: 0;
+        width: min(100%, calc(100vw - 36px));
+      }
+      .reveal-btn { width: 100%; justify-content: center; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -315,7 +347,7 @@
       <section class="sec" id="grid" aria-labelledby="grid-h">
         <div class="sec-head">
           <h2 id="grid-h">Every location</h2>
-          <p>Click any column to sort. Search by name, town, or address.</p>
+          <p>The top 16 stay in view first. Search or filter to show every matching location.</p>
         </div>
         <div class="toolbar">
           <div class="chips" id="chips" role="group" aria-label="Filter locations">
@@ -450,7 +482,8 @@
       { key:"score",  label:"Score",     num:true,  align:"r" }
     ];
 
-    let state = { sortKey:"score", sortDir:"desc", search:"", filter:"all" };
+    const DEFAULT_VISIBLE_ROWS = 16;
+    let state = { sortKey:"score", sortDir:"desc", search:"", filter:"all", expanded:false };
 
     function renderHead() {
       document.getElementById("head-row").innerHTML = COLS.map(c => {
@@ -494,46 +527,85 @@
       return (av - bv) * dir;
     }
 
+    function renderLocationRow(d) {
+      const cafePill = d.cafe
+        ? `<span class="pill cafe dot">Café</span>`
+        : `<span class="pill nocafe dot">No café</span>`;
+      const regionPill = `<span class="pill ${d.region === "NJ" ? "nj" : "ny"} dot">${regionName(d.region)}</span>`;
+      const ratingCell = d.rating == null
+        ? `<span class="na">—</span>`
+        : `<div class="num"><span class="star">★</span><span class="rating-num">${d.rating}</span></div>
+           <div class="rev-sub">${d.src ? `<a href="${d.src.u}" target="_blank" rel="noopener">${fmt(d.reviews)} reviews</a>` : fmt(d.reviews) + " reviews"}</div>`;
+      const soon = d.soon ? ` <span class="pill soon" style="margin-left:6px">${d.soon}</span>` : "";
+      return `
+        <tr class="${d.score == null ? "unscored" : ""}">
+          <td class="rank">${d.rank == null ? "·" : d.rank}</td>
+          <td>
+            <div class="loc-name"><a href="${storeUrl(d.id)}" target="_blank" rel="noopener">${d.name}</a>${soon}</div>
+            <div class="loc-addr">${d.addr}</div>
+          </td>
+          <td>${regionPill}</td>
+          <td class="r num">${d.opened}</td>
+          <td class="r num">${d.dist}</td>
+          <td class="r">${ratingCell}</td>
+          <td class="r num dim">${d.rev == null ? "—" : d.rev.toFixed(2)}</td>
+          <td>${cafePill}</td>
+          <td class="r num dim">${d.close == null ? "—" : d.close.toFixed(2)}</td>
+          <td class="r">${d.score == null ? `<span class="na">unscored</span>` : `<span class="score-pill ${scoreClass(d.score)}">${d.score.toFixed(2)}</span>`}</td>
+        </tr>`;
+    }
+
+    function renderRevealRow(hiddenCount) {
+      const expanded = state.expanded;
+      const title = expanded ? "All locations are visible" : `${hiddenCount} more locations folded below`;
+      const detail = expanded
+        ? "Collapse back to the ranked top 16 for a quieter scan."
+        : "Lower-ranked and unscored stores stay close by without crowding the first pass.";
+      return `
+        <tr class="reveal-row">
+          <td colspan="${COLS.length}">
+            <div class="reveal-panel">
+              <p class="reveal-copy"><b>${title}</b><span>${detail}</span></p>
+              <button class="reveal-btn" type="button" data-action="toggle-rows" aria-expanded="${expanded ? "true" : "false"}" aria-controls="body">
+                <span class="reveal-icon" aria-hidden="true"></span>${expanded ? "Show fewer" : `Show ${hiddenCount} more`}
+              </button>
+            </div>
+          </td>
+        </tr>`;
+    }
+
     function renderBody() {
       const rows = DATA.filter(d => passFilter(d) && passSearch(d));
       // keep scored above unscored, then apply the active sort within each group
       const scored = rows.filter(d => d.score != null).sort(compare);
       const unscored = rows.filter(d => d.score == null).sort(compare);
       const ordered = [...scored, ...unscored];
+      const hasActiveNarrowing = state.filter !== "all" || state.search.trim().length > 0;
+      const foldable = !hasActiveNarrowing && ordered.length > DEFAULT_VISIBLE_ROWS;
+      const hiddenCount = Math.max(ordered.length - DEFAULT_VISIBLE_ROWS, 0);
+      const visibleRows = foldable && !state.expanded ? ordered.slice(0, DEFAULT_VISIBLE_ROWS) : ordered;
 
-      document.getElementById("body").innerHTML = ordered.map(d => {
-        const cafePill = d.cafe
-          ? `<span class="pill cafe dot">Café</span>`
-          : `<span class="pill nocafe dot">No café</span>`;
-        const regionPill = `<span class="pill ${d.region === "NJ" ? "nj" : "ny"} dot">${regionName(d.region)}</span>`;
-        const ratingCell = d.rating == null
-          ? `<span class="na">—</span>`
-          : `<div class="num"><span class="star">★</span><span class="rating-num">${d.rating}</span></div>
-             <div class="rev-sub">${d.src ? `<a href="${d.src.u}" target="_blank" rel="noopener">${fmt(d.reviews)} reviews</a>` : fmt(d.reviews) + " reviews"}</div>`;
-        const soon = d.soon ? ` <span class="pill soon" style="margin-left:6px">${d.soon}</span>` : "";
-        return `
-          <tr class="${d.score == null ? "unscored" : ""}">
-            <td class="rank">${d.rank == null ? "·" : d.rank}</td>
-            <td>
-              <div class="loc-name"><a href="${storeUrl(d.id)}" target="_blank" rel="noopener">${d.name}</a>${soon}</div>
-              <div class="loc-addr">${d.addr}</div>
-            </td>
-            <td>${regionPill}</td>
-            <td class="r num">${d.opened}</td>
-            <td class="r num">${d.dist}</td>
-            <td class="r">${ratingCell}</td>
-            <td class="r num dim">${d.rev == null ? "—" : d.rev.toFixed(2)}</td>
-            <td>${cafePill}</td>
-            <td class="r num dim">${d.close == null ? "—" : d.close.toFixed(2)}</td>
-            <td class="r">${d.score == null ? `<span class="na">unscored</span>` : `<span class="score-pill ${scoreClass(d.score)}">${d.score.toFixed(2)}</span>`}</td>
-          </tr>`;
-      }).join("");
+      document.getElementById("body").innerHTML =
+        visibleRows.map(renderLocationRow).join("") + (foldable ? renderRevealRow(hiddenCount) : "");
+
+      const toggle = document.querySelector("[data-action='toggle-rows']");
+      if (toggle) {
+        toggle.addEventListener("click", () => {
+          state.expanded = !state.expanded;
+          renderBody();
+          document.querySelector("[data-action='toggle-rows']")?.focus({ preventScroll: true });
+        });
+      }
 
       const n = ordered.length;
       const q = state.search.trim();
+      const filterLabel = { scored:"scored", cafe:"with cafés", nj:"in New Jersey", ny:"in the Hudson Valley" }[state.filter];
+      const shown = foldable && !state.expanded ? visibleRows.length : n;
       document.getElementById("count").textContent =
-        `Showing ${n} of ${DATA.length} location${n === 1 ? "" : "s"}` +
-        (q ? ` matching “${q}”` : "") + ".";
+        `Showing ${shown} of ${DATA.length} location${shown === 1 ? "" : "s"}` +
+        (q ? ` matching “${q}”` : "") +
+        (filterLabel ? `${q ? " and " : " "}${filterLabel}` : "") +
+        (foldable && !state.expanded ? `; ${hiddenCount} more folded below` : "") + ".";
     }
 
     /* ---- Chips & search ---- */
