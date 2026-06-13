@@ -1,0 +1,1351 @@
+{
+  "metadata": {
+    "compiled_date": "2026-06-13",
+    "scope": "Keyword notes for the current New Jersey and lower/Hudson Valley New York Barnes & Noble rows in app.js.",
+    "source_note": "User-review keywords are derived from public store-specific review and search snippets where available. For opening-soon stores and rows without reliable store-specific snippets, user_review_keywords is intentionally empty or marked low confidence, with official/context terms kept separate.",
+    "raw_collection_files": [
+      "/tmp/bn-nj-reviews-search-1.json",
+      "/tmp/bn-ny-reviews-search-1.json",
+      "/tmp/bn-nj-unscored-reviews-search.json",
+      "/tmp/bn-nj-reviews-search-2.json",
+      "/tmp/bn-ny-reviews-search-2.json",
+      "/tmp/bn-ny-reviews-search-3.json"
+    ],
+    "join_key": "store_id"
+  },
+  "entries": [
+    {
+      "store_id": 2932,
+      "name": "Clifton Commons",
+      "region": "NJ",
+      "current_rank": 1,
+      "keywords": {
+        "user_review_keywords": [
+          "upscale",
+          "great staff",
+          "relax and read",
+          "large store",
+          "coffee",
+          "comfortable browsing"
+        ],
+        "official_or_context_keywords": [
+          "Clifton Commons",
+          "cafe",
+          "books",
+          "games"
+        ],
+        "confidence": "medium"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp public search result",
+          "source_url": "https://www.yelp.com/search?find_desc=Barnes+%26+Noble=&find_loc=Clifton%2C+NJ",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "upscale",
+            "great staff",
+            "relax/read"
+          ]
+        },
+        {
+          "source_label": "Current report rating source",
+          "source_url": "https://www.chamberofcommerce.com/business-directory/new-jersey/clifton/hobby-store/2003199557-barnes-noble",
+          "evidence_type": "rating_source",
+          "terms": [
+            "high review volume",
+            "hobby-store listing"
+          ]
+        }
+      ],
+      "notes": "Keyword confidence is based on public snippets, not a complete review export."
+    },
+    {
+      "store_id": 2889,
+      "name": "Yonkers",
+      "region": "NY",
+      "current_rank": 2,
+      "keywords": {
+        "user_review_keywords": [
+          "flagship",
+          "Central Avenue staple",
+          "friendly staff",
+          "broad selection",
+          "cafe",
+          "last of a dying breed"
+        ],
+        "official_or_context_keywords": [
+          "Central Plaza",
+          "cafe",
+          "books",
+          "Yonkers"
+        ],
+        "confidence": "medium"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-yonkers",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "flagship",
+            "Central Avenue",
+            "bookstore"
+          ]
+        },
+        {
+          "source_label": "Current report rating source",
+          "source_url": "https://www.chamberofcommerce.com/business-directory/new-york/yonkers/cafe/2000049568-barnes-noble",
+          "evidence_type": "rating_source",
+          "terms": [
+            "friendly staff",
+            "cafe"
+          ]
+        }
+      ],
+      "notes": "Public snippets included both positive staff comments and one cafe safety concern, so keywords are descriptive rather than purely positive."
+    },
+    {
+      "store_id": 2162,
+      "name": "Menlo Park Mall",
+      "region": "NJ",
+      "current_rank": 3,
+      "keywords": {
+        "user_review_keywords": [
+          "two-story",
+          "warm atmosphere",
+          "cozy read",
+          "coffee",
+          "extensive collection",
+          "shopping-center browsing"
+        ],
+        "official_or_context_keywords": [
+          "Menlo Park Mall",
+          "Edison",
+          "cafe",
+          "mall location"
+        ],
+        "confidence": "medium"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Wanderlog",
+          "source_url": "https://wanderlog.com/place/details/15872997/barnes--noble",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "two-story",
+            "warm atmosphere",
+            "cozy read"
+          ]
+        }
+      ],
+      "notes": "The strongest store-specific keyword source found was the same source used in the current report."
+    },
+    {
+      "store_id": 2924,
+      "name": "East Brunswick",
+      "region": "NJ",
+      "current_rank": 4,
+      "keywords": {
+        "user_review_keywords": [
+          "extensive selection",
+          "well-organized",
+          "cozy seating",
+          "Starbucks",
+          "children's section",
+          "story sessions",
+          "friendly staff",
+          "knowledgeable staff",
+          "ample parking"
+        ],
+        "official_or_context_keywords": [
+          "Brunswick Square Mall",
+          "cafe",
+          "books",
+          "toys"
+        ],
+        "confidence": "high"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-east-brunswick",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "extensive selection",
+            "well-organized",
+            "staff"
+          ]
+        },
+        {
+          "source_label": "Wheree public listing",
+          "source_url": "https://barnes-and-noble-22.wheree.com/",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "cozy seating",
+            "Starbucks",
+            "children's section"
+          ]
+        },
+        {
+          "source_label": "Official Barnes & Noble store page",
+          "source_url": "https://stores.barnesandnoble.com/store/2924",
+          "evidence_type": "official/context",
+          "terms": [
+            "Brunswick Square",
+            "cafe"
+          ]
+        }
+      ],
+      "notes": "This is the existing East Brunswick row, separate from the opening-soon replacement at store 3591."
+    },
+    {
+      "store_id": 2980,
+      "name": "Morris Plains",
+      "region": "NJ",
+      "current_rank": 5,
+      "keywords": {
+        "user_review_keywords": [],
+        "official_or_context_keywords": [
+          "longstanding location",
+          "Morris Plains",
+          "cafe",
+          "bookstore",
+          "photos"
+        ],
+        "confidence": "low"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-booksellers-morris-plains-2",
+          "evidence_type": "listing_context",
+          "terms": [
+            "bookstore",
+            "photos"
+          ]
+        },
+        {
+          "source_label": "Current report rating source",
+          "source_url": "https://www.chamberofcommerce.com/business-directory/new-jersey/morris-plains/book-store/2003499390-barnes-noble",
+          "evidence_type": "rating_source",
+          "terms": [
+            "high review volume",
+            "book-store listing"
+          ]
+        }
+      ],
+      "notes": "No reliable store-specific user-review keyword snippets were found in the available results."
+    },
+    {
+      "store_id": 2905,
+      "name": "Palisades",
+      "region": "NY",
+      "current_rank": 6,
+      "keywords": {
+        "user_review_keywords": [
+          "wanderable",
+          "mall location",
+          "coffee",
+          "great location",
+          "terrific staff",
+          "spectacular service",
+          "garage parking",
+          "100% recommend"
+        ],
+        "official_or_context_keywords": [
+          "Palisades Center",
+          "West Nyack",
+          "cafe",
+          "mall bookstore"
+        ],
+        "confidence": "medium"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Restaurant Guru public listing",
+          "source_url": "https://restaurantguru.com/Barnes-and-Noble-West-Nyack",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "great location",
+            "terrific staff",
+            "spectacular service"
+          ]
+        },
+        {
+          "source_label": "Yahoo Local public listing",
+          "source_url": "https://local.yahoo.com/info-27808267-barnes-noble-booksellers-west-nyack/",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "coffee",
+            "garage parking"
+          ]
+        },
+        {
+          "source_label": "Facebook public page",
+          "source_url": "https://www.facebook.com/BNPalisades/",
+          "evidence_type": "social_context",
+          "terms": [
+            "recommend"
+          ]
+        }
+      ],
+      "notes": "Keyword evidence combines public listing snippets and social recommendation context."
+    },
+    {
+      "store_id": 2609,
+      "name": "Freehold",
+      "region": "NJ",
+      "current_rank": 7,
+      "keywords": {
+        "user_review_keywords": [],
+        "official_or_context_keywords": [
+          "booksellers",
+          "bookstore",
+          "toy store",
+          "Freehold",
+          "late hours"
+        ],
+        "confidence": "low"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-booksellers-freehold",
+          "evidence_type": "listing_context",
+          "terms": [
+            "bookstore",
+            "toy store"
+          ]
+        },
+        {
+          "source_label": "Current report rating source",
+          "source_url": "https://bookstore-usa.nears.me/listings/united-states/new-jersey/freehold/trusted-barnes-noble-childrens-bookstore-in-freehold-new-jersey/",
+          "evidence_type": "rating_source",
+          "terms": [
+            "children's bookstore",
+            "Freehold"
+          ]
+        }
+      ],
+      "notes": "Review-derived descriptors were too thin to separate from listing/category context."
+    },
+    {
+      "store_id": 2140,
+      "name": "Somerset Shopping Center",
+      "region": "NJ",
+      "current_rank": 8,
+      "keywords": {
+        "user_review_keywords": [
+          "extensive selection",
+          "toys",
+          "educational items",
+          "friendly staff",
+          "knowledgeable staff",
+          "welcoming atmosphere",
+          "cozy kids corner",
+          "Starbucks",
+          "help desk",
+          "books in stock"
+        ],
+        "official_or_context_keywords": [
+          "Bridgewater",
+          "Somerset Shopping Center",
+          "cafe",
+          "books"
+        ],
+        "confidence": "high"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Wheree public listing",
+          "source_url": "https://barnes-and-noble-58.wheree.com/",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "extensive selection",
+            "friendly staff",
+            "welcoming atmosphere"
+          ]
+        },
+        {
+          "source_label": "Loc8NearMe public listing",
+          "source_url": "https://www.loc8nearme.com/new-jersey/bridgewater/barnes-and-noble/144055/",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "kids corner",
+            "Starbucks",
+            "books in stock"
+          ]
+        }
+      ],
+      "notes": "This row is the Bridgewater/Somerset Shopping Center store."
+    },
+    {
+      "store_id": 3448,
+      "name": "Paramus",
+      "region": "NJ",
+      "current_rank": 9,
+      "keywords": {
+        "user_review_keywords": [
+          "comfortable",
+          "coffee",
+          "snacks",
+          "family-friendly",
+          "teen study spot",
+          "nice atmosphere",
+          "modern store"
+        ],
+        "official_or_context_keywords": [
+          "Fashion Center",
+          "Paramus",
+          "cafe",
+          "newer format"
+        ],
+        "confidence": "medium"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Nextdoor public listing",
+          "source_url": "https://nextdoor.com/pages/barnes-noble-paramus-nj-1/",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "comfortable",
+            "family-friendly",
+            "teen study"
+          ]
+        },
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-paramus-2",
+          "evidence_type": "listing_context",
+          "terms": [
+            "coffee",
+            "snacks"
+          ]
+        }
+      ],
+      "notes": "The review keyword set reflects the newer Paramus store, not the older regional B&N footprint."
+    },
+    {
+      "store_id": 3421,
+      "name": "Holmdel",
+      "region": "NJ",
+      "current_rank": 10,
+      "keywords": {
+        "user_review_keywords": [
+          "clean",
+          "organized",
+          "inviting",
+          "pleasant staff",
+          "helpful staff",
+          "well-stocked children's area"
+        ],
+        "official_or_context_keywords": [
+          "Commons at Holmdel",
+          "cafe",
+          "books",
+          "children's section"
+        ],
+        "confidence": "medium"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-booksellers-holmdel",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "clean",
+            "organized",
+            "staff"
+          ]
+        },
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-holmdel",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "inviting",
+            "children's area"
+          ]
+        }
+      ],
+      "notes": "Public snippets were consistent around cleanliness, organization, and staff."
+    },
+    {
+      "store_id": 2897,
+      "name": "Mohegan Lake",
+      "region": "NY",
+      "current_rank": 11,
+      "keywords": {
+        "user_review_keywords": [
+          "private lot parking",
+          "dogs allowed",
+          "neighborhood bookstore"
+        ],
+        "official_or_context_keywords": [
+          "Cortlandt Town Center",
+          "bookstore",
+          "toy store",
+          "Mohegan Lake"
+        ],
+        "confidence": "low"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-booksellers-mohegan-lake",
+          "evidence_type": "listing_context",
+          "terms": [
+            "private lot parking",
+            "dogs allowed"
+          ]
+        },
+        {
+          "source_label": "Facebook public page",
+          "source_url": "https://www.facebook.com/BNMoheganLake/",
+          "evidence_type": "social_context",
+          "terms": [
+            "community bookstore"
+          ]
+        }
+      ],
+      "notes": "Keyword confidence is low because the retrieved snippets leaned toward listing attributes."
+    },
+    {
+      "store_id": 3424,
+      "name": "Union Plaza",
+      "region": "NJ",
+      "current_rank": 12,
+      "keywords": {
+        "user_review_keywords": [],
+        "official_or_context_keywords": [
+          "storytime",
+          "summer reading",
+          "community events",
+          "bookstore",
+          "Union Plaza"
+        ],
+        "confidence": "official_context_only"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Official Barnes & Noble store page",
+          "source_url": "https://stores.barnesandnoble.com/store/3424",
+          "evidence_type": "official/context",
+          "terms": [
+            "Union Plaza",
+            "bookstore"
+          ]
+        },
+        {
+          "source_label": "Instagram public page",
+          "source_url": "https://www.instagram.com/bnunionnj/?hl=en",
+          "evidence_type": "social_context",
+          "terms": [
+            "storytime",
+            "summer reading",
+            "events"
+          ]
+        }
+      ],
+      "notes": "No reliable user-review snippets were found; keywords are official/social-context terms."
+    },
+    {
+      "store_id": 2215,
+      "name": "Newburgh Crossing",
+      "region": "NY",
+      "current_rank": 13,
+      "keywords": {
+        "user_review_keywords": [
+          "recommended"
+        ],
+        "official_or_context_keywords": [
+          "curbside pickup",
+          "bookstore",
+          "community page",
+          "Newburgh Crossing",
+          "cafe"
+        ],
+        "confidence": "low"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Facebook public page",
+          "source_url": "https://www.facebook.com/BnNewburgh/",
+          "evidence_type": "social_context",
+          "terms": [
+            "recommended",
+            "community"
+          ]
+        },
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-booksellers-newburgh-2",
+          "evidence_type": "listing_context",
+          "terms": [
+            "bookstore"
+          ]
+        }
+      ],
+      "notes": "Public review snippets were sparse despite high review volume in the current report source."
+    },
+    {
+      "store_id": 1977,
+      "name": "Woodland Park",
+      "region": "NJ",
+      "current_rank": 14,
+      "keywords": {
+        "user_review_keywords": [],
+        "official_or_context_keywords": [
+          "department-store listing",
+          "shopping",
+          "bookstore",
+          "cafe",
+          "Woodland Park"
+        ],
+        "confidence": "low"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Tripadvisor public listing",
+          "source_url": "https://www.tripadvisor.com/Attraction_Review-g46574-d27073966-Reviews-Barnes_and_Noble_Woodland_Park-Little_Falls_New_Jersey.html",
+          "evidence_type": "listing_context",
+          "terms": [
+            "shopping",
+            "bookstore"
+          ]
+        },
+        {
+          "source_label": "Current report rating source",
+          "source_url": "https://businessyab.com/explore/united_states/new_jersey/passaic_county/woodland_park/barnes-noble-973-812-0180.html",
+          "evidence_type": "rating_source",
+          "terms": [
+            "Woodland Park"
+          ]
+        }
+      ],
+      "notes": "No dependable user-review keyword snippets were found."
+    },
+    {
+      "store_id": 2886,
+      "name": "Poughkeepsie",
+      "region": "NY",
+      "current_rank": 15,
+      "keywords": {
+        "user_review_keywords": [
+          "stylish",
+          "dependable",
+          "huge selection",
+          "well-organized",
+          "kids section",
+          "puzzle books",
+          "clean environment",
+          "comfortable reading areas"
+        ],
+        "official_or_context_keywords": [
+          "South Road",
+          "Poughkeepsie",
+          "cafe",
+          "bookstore"
+        ],
+        "confidence": "medium"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Nextdoor public listing",
+          "source_url": "https://nextdoor.com/pages/barnes-noble-poughkeepsie-ny-2/",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "stylish",
+            "dependable",
+            "huge selection"
+          ]
+        },
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-booksellers-poughkeepsie",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "kids section",
+            "clean",
+            "comfortable reading"
+          ]
+        }
+      ],
+      "notes": "Keywords come from public snippets for the same Poughkeepsie/South Road store."
+    },
+    {
+      "store_id": 3468,
+      "name": "Ledgewood",
+      "region": "NJ",
+      "current_rank": 16,
+      "keywords": {
+        "user_review_keywords": [
+          "back in town",
+          "nicely done",
+          "welcoming service",
+          "new setup",
+          "grand opening"
+        ],
+        "official_or_context_keywords": [
+          "Ledgewood Commons",
+          "newer store",
+          "bookstore"
+        ],
+        "confidence": "medium"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-ledgewood",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "back in town",
+            "nicely done",
+            "welcoming"
+          ]
+        }
+      ],
+      "notes": "Small review corpus; keywords reflect early/new-store comments."
+    },
+    {
+      "store_id": 3405,
+      "name": "Kings Mall",
+      "region": "NY",
+      "current_rank": 17,
+      "keywords": {
+        "user_review_keywords": [
+          "positive experience",
+          "well-organized",
+          "comfortable browsing",
+          "curated selection",
+          "wifi",
+          "work space",
+          "coffee shop",
+          "tables",
+          "parking",
+          "alcoves"
+        ],
+        "official_or_context_keywords": [
+          "Kings Mall",
+          "Kingston",
+          "cafe",
+          "bookstore"
+        ],
+        "confidence": "medium"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Bookstore-USA public listing",
+          "source_url": "https://bookstore-usa.nears.me/listings/united-states/new-york/kingston-3/trusted-barnes-noble-book-cafe-in-kingston-new-york/",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "positive experience",
+            "well-organized",
+            "comfortable browsing"
+          ]
+        },
+        {
+          "source_label": "Yahoo Local public listing",
+          "source_url": "https://local.yahoo.com/info-229989904-barnes-noble-kingston/",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "wifi",
+            "work space",
+            "coffee shop"
+          ]
+        },
+        {
+          "source_label": "Foursquare public page",
+          "source_url": "https://foursquare.com/v/barnes--noble/4b3cb8c9f964a5208a8625e3",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "tables",
+            "parking",
+            "alcoves"
+          ]
+        }
+      ],
+      "notes": "Keywords reflect both bookstore and cafe/workspace usage."
+    },
+    {
+      "store_id": 3311,
+      "name": "The Shops at Riverside",
+      "region": "NJ",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [
+          "friendly comfortable environment",
+          "work/study cafe"
+        ],
+        "official_or_context_keywords": [
+          "Starbucks beverage",
+          "bakery pastry",
+          "cafe sandwich",
+          "smoothie",
+          "free wifi",
+          "The Shops at Riverside"
+        ],
+        "confidence": "low"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Simon mall listing",
+          "source_url": "https://www.simon.com/mall/the-shops-at-riverside/stores/barnes-and-noble-cafe",
+          "evidence_type": "official/context",
+          "terms": [
+            "Starbucks beverage",
+            "bakery pastry",
+            "free wifi"
+          ]
+        },
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-booksellers-hackensack",
+          "evidence_type": "listing_context",
+          "terms": [
+            "bookstore",
+            "cafe"
+          ]
+        },
+        {
+          "source_label": "Facebook public page",
+          "source_url": "https://www.facebook.com/BNHackensackNJ/",
+          "evidence_type": "social_context",
+          "terms": [
+            "community page"
+          ]
+        }
+      ],
+      "notes": "The strongest retrieved terms describe the cafe offering rather than detailed user-review sentiment."
+    },
+    {
+      "store_id": 3558,
+      "name": "Clark Commons",
+      "region": "NJ",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [],
+        "official_or_context_keywords": [
+          "newer store",
+          "Clark Commons",
+          "books",
+          "toys",
+          "games",
+          "music"
+        ],
+        "confidence": "official_context_only"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Official Barnes & Noble store page",
+          "source_url": "https://stores.barnesandnoble.com/store/3558",
+          "evidence_type": "official/context",
+          "terms": [
+            "Clark Commons",
+            "books",
+            "toys",
+            "games"
+          ]
+        }
+      ],
+      "notes": "No reliable user-review snippets were found."
+    },
+    {
+      "store_id": 2340,
+      "name": "Livingston",
+      "region": "NJ",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [
+          "huge",
+          "quiet spot",
+          "sit and relax",
+          "rainy day",
+          "usually has what I need",
+          "helpful staff"
+        ],
+        "official_or_context_keywords": [
+          "Livingston",
+          "cafe",
+          "bookstore",
+          "Eisenhower Parkway"
+        ],
+        "confidence": "medium"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-livingston",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "huge",
+            "quiet",
+            "helpful staff"
+          ]
+        }
+      ],
+      "notes": "This is the existing Livingston row at Eisenhower Parkway, separate from the planned Livingston Shopping Center store."
+    },
+    {
+      "store_id": 3590,
+      "name": "Livingston",
+      "region": "NJ",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [],
+        "official_or_context_keywords": [
+          "opening soon",
+          "Livingston Shopping Center",
+          "cafe",
+          "new store"
+        ],
+        "confidence": "official_context_only"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Official Barnes & Noble store page",
+          "source_url": "https://stores.barnesandnoble.com/store/3590",
+          "evidence_type": "official/context",
+          "terms": [
+            "Livingston Shopping Center",
+            "opening soon",
+            "cafe"
+          ]
+        }
+      ],
+      "notes": "Opening-soon location; no user reviews expected yet."
+    },
+    {
+      "store_id": 3304,
+      "name": "Eastchester",
+      "region": "NY",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [],
+        "official_or_context_keywords": [
+          "large review volume",
+          "bookstore",
+          "cafe",
+          "events",
+          "Vernon Hills Shopping Center"
+        ],
+        "confidence": "low"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-scarsdale",
+          "evidence_type": "listing_context",
+          "terms": [
+            "bookstore",
+            "cafe"
+          ]
+        },
+        {
+          "source_label": "Official Barnes & Noble store page",
+          "source_url": "https://stores.barnesandnoble.com/store/3304",
+          "evidence_type": "official/context",
+          "terms": [
+            "Eastchester",
+            "Vernon Hills Shopping Center"
+          ]
+        }
+      ],
+      "notes": "No clean user-review snippets were found in the retrieved results, so only context keywords are stored."
+    },
+    {
+      "store_id": 3626,
+      "name": "Wayne",
+      "region": "NJ",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [],
+        "official_or_context_keywords": [
+          "opening soon",
+          "cafe",
+          "new store",
+          "Route 23"
+        ],
+        "confidence": "official_context_only"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Official Barnes & Noble store page",
+          "source_url": "https://stores.barnesandnoble.com/store/3626",
+          "evidence_type": "official/context",
+          "terms": [
+            "opening soon",
+            "Route 23",
+            "cafe"
+          ]
+        }
+      ],
+      "notes": "Opening-soon location; no user reviews expected yet."
+    },
+    {
+      "store_id": 3445,
+      "name": "Hartsdale",
+      "region": "NY",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [
+          "modernized",
+          "good location",
+          "newer format"
+        ],
+        "official_or_context_keywords": [
+          "Dalewood II",
+          "Hartsdale",
+          "bookstore"
+        ],
+        "confidence": "low"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp Westchester public search result",
+          "source_url": "https://www.yelp.com/search?find_desc=Barnes+%26+Noble+Booksellers=&find_loc=Westchester+County%2C+NY",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "modernized",
+            "good location"
+          ]
+        },
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-hartsdale-2",
+          "evidence_type": "listing_context",
+          "terms": [
+            "newer format",
+            "bookstore"
+          ]
+        }
+      ],
+      "notes": "Store-specific snippets were limited; confidence is low."
+    },
+    {
+      "store_id": 3591,
+      "name": "East Brunswick",
+      "region": "NJ",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [],
+        "official_or_context_keywords": [
+          "opening soon",
+          "Brunswick Square",
+          "cafe",
+          "new store"
+        ],
+        "confidence": "official_context_only"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Official Barnes & Noble store page",
+          "source_url": "https://stores.barnesandnoble.com/store/3591",
+          "evidence_type": "official/context",
+          "terms": [
+            "opening soon",
+            "Brunswick Square",
+            "cafe"
+          ]
+        }
+      ],
+      "notes": "Opening-soon replacement/new East Brunswick row; no user reviews expected yet."
+    },
+    {
+      "store_id": 3422,
+      "name": "Monmouth Square",
+      "region": "NJ",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [
+          "large store",
+          "Jersey Shore",
+          "brand new store",
+          "open",
+          "favorite bookstore"
+        ],
+        "official_or_context_keywords": [
+          "Monmouth Square",
+          "Eatontown",
+          "cafe",
+          "books"
+        ],
+        "confidence": "medium"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-booksellers-eatontown",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "large store",
+            "favorite bookstore"
+          ]
+        },
+        {
+          "source_label": "Instagram public page",
+          "source_url": "https://www.instagram.com/bnmonmouthsquare/",
+          "evidence_type": "social_context",
+          "terms": [
+            "brand new store",
+            "open"
+          ]
+        },
+        {
+          "source_label": "Facebook public page",
+          "source_url": "https://www.facebook.com/BNmonmouthmall/",
+          "evidence_type": "social_context",
+          "terms": [
+            "Jersey Shore",
+            "community"
+          ]
+        }
+      ],
+      "notes": "Terms combine legacy Eatontown review snippets and new Monmouth Square social/store context."
+    },
+    {
+      "store_id": 3488,
+      "name": "Mount Kisco",
+      "region": "NY",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [
+          "new store smell",
+          "clearly arranged sections",
+          "modernized",
+          "standard selection",
+          "not big overall"
+        ],
+        "official_or_context_keywords": [
+          "books",
+          "toys",
+          "games",
+          "gifts",
+          "cafe",
+          "Mount Kisco"
+        ],
+        "confidence": "medium"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yahoo Local public listing",
+          "source_url": "https://local.yahoo.com/info-238631740-barnes-noble-mt-kisco/",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "new store smell",
+            "clearly arranged sections",
+            "not big overall"
+          ]
+        },
+        {
+          "source_label": "Lohud local news",
+          "source_url": "https://eu.lohud.com/story/news/local/westchester/mount-kisco/2024/03/27/westchester-mount-kisco-ny-slated-to-get-barnes-and-noble/73118289007/",
+          "evidence_type": "news/context",
+          "terms": [
+            "Mount Kisco",
+            "new store"
+          ]
+        },
+        {
+          "source_label": "Official Barnes & Noble store page",
+          "source_url": "https://stores.barnesandnoble.com/store/3488",
+          "evidence_type": "official/context",
+          "terms": [
+            "books",
+            "toys",
+            "games",
+            "cafe"
+          ]
+        }
+      ],
+      "notes": "Review snippets are available but limited; official context fills product mix."
+    },
+    {
+      "store_id": 2368,
+      "name": "Princeton",
+      "region": "NJ",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [
+          "Princeton hands-down",
+          "good book store",
+          "vinyl",
+          "large review volume"
+        ],
+        "official_or_context_keywords": [
+          "Market Fair",
+          "Princeton",
+          "cafe",
+          "bookstore"
+        ],
+        "confidence": "low"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Reddit public discussion",
+          "source_url": "https://www.reddit.com/r/newjersey/comments/1ijh12p/best_barnes_and_noble_in_nj/",
+          "evidence_type": "user_discussion",
+          "terms": [
+            "Princeton",
+            "hands-down"
+          ]
+        },
+        {
+          "source_label": "Foursquare public page",
+          "source_url": "https://foursquare.com/v/barnes--noble/4b42360bf964a5200ecf25e3",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "good book store",
+            "vinyl"
+          ]
+        },
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-booksellers-princeton",
+          "evidence_type": "listing_context",
+          "terms": [
+            "large review volume"
+          ]
+        }
+      ],
+      "notes": "Keywords include one broader New Jersey discussion snippet; confidence is low because it is not a formal store-review corpus."
+    },
+    {
+      "store_id": 2803,
+      "name": "Brick",
+      "region": "NJ",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [],
+        "official_or_context_keywords": [
+          "member perks",
+          "free shipping",
+          "booksellers",
+          "community store",
+          "Brick Plaza",
+          "cafe"
+        ],
+        "confidence": "low"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-booksellers-brick",
+          "evidence_type": "listing_context",
+          "terms": [
+            "bookstore",
+            "cafe"
+          ]
+        },
+        {
+          "source_label": "Facebook public page",
+          "source_url": "https://www.facebook.com/BNBrickTownshipNJ",
+          "evidence_type": "social_context",
+          "terms": [
+            "member perks",
+            "free shipping",
+            "booksellers"
+          ]
+        }
+      ],
+      "notes": "No reliable review-derived keywords were found; retained social/listing context only."
+    },
+    {
+      "store_id": 2217,
+      "name": "Hamilton",
+      "region": "NJ",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [
+          "excellent",
+          "comfy chairs",
+          "rewards program",
+          "lattes",
+          "magazines",
+          "books galore",
+          "page books"
+        ],
+        "official_or_context_keywords": [
+          "Hamilton Marketplace",
+          "cafe",
+          "bookstore"
+        ],
+        "confidence": "medium"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Yelp public page",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-booksellers-trenton",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "excellent",
+            "comfy chairs",
+            "lattes"
+          ]
+        },
+        {
+          "source_label": "Wheree public listing",
+          "source_url": "https://barnes-noble-86.wheree.com/",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "magazines",
+            "books galore",
+            "rewards program"
+          ]
+        },
+        {
+          "source_label": "Loc8NearMe public listing",
+          "source_url": "https://www.loc8nearme.com/new-jersey/hamilton/barnes-and-noble/140322/",
+          "evidence_type": "review_snippet",
+          "terms": [
+            "page books",
+            "cafe"
+          ]
+        }
+      ],
+      "notes": "The Hamilton row is sometimes surfaced as Trenton/Hamilton in third-party listings."
+    },
+    {
+      "store_id": 3624,
+      "name": "Middletown",
+      "region": "NY",
+      "current_rank": null,
+      "keywords": {
+        "user_review_keywords": [],
+        "official_or_context_keywords": [
+          "opening soon",
+          "Galleria at Crystal Run",
+          "19000 square feet",
+          "books",
+          "toys",
+          "games",
+          "cafe",
+          "lower level next to Macy's"
+        ],
+        "confidence": "official_context_only"
+      },
+      "source_evidence": [
+        {
+          "source_label": "Daily Voice local news",
+          "source_url": "https://dailyvoice.com/ny/middletown-wallkill/new-barnes-noble-coming-to-galleria-at-crystal-run/",
+          "evidence_type": "news/context",
+          "terms": [
+            "Galleria at Crystal Run",
+            "opening soon"
+          ]
+        },
+        {
+          "source_label": "Pyramid Management Group announcement",
+          "source_url": "https://www.pyramidmg.com/barnes-noble-coming-soon-to-galleria-at-crystal-run-in-middletown-ny/",
+          "evidence_type": "news/context",
+          "terms": [
+            "19000 square feet",
+            "lower level next to Macy's",
+            "cafe"
+          ]
+        }
+      ],
+      "notes": "Opening-soon location; no user reviews expected yet."
+    }
+  ]
+}

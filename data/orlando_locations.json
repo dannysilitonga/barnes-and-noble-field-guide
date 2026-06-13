@@ -1,0 +1,711 @@
+{
+  "metadata": {
+    "compiled_date": "2026-06-13",
+    "area": "Greater Orlando, Florida",
+    "base": {
+      "label": "12550 Windy Pointe Lp, Orlando, FL 32824, USA",
+      "geocode_source": "Barnes & Noble locator API location/change endpoint",
+      "latitude": 28.389905,
+      "longitude": -81.3353236,
+      "city": "Orlando",
+      "state": "FL",
+      "zip": "32824"
+    },
+    "scope": "Official Barnes & Noble locator entries within 50 straight-line miles of the base geocode.",
+    "distance_units": "miles",
+    "distance_note": "Distances are locator/API straight-line distances from the base geocode; driving distances will be longer.",
+    "primary_location_source": "https://stores.barnesandnoble.com/locator-api/v1/stores?lat=28.389905&lng=-81.3353236&distance=50&size=50",
+    "raw_collection_files": [
+      "/tmp/bn_orlando_api_base_geocode.json",
+      "/tmp/bn-orlando-reviews-search.json",
+      "/tmp/bn-orlando-reviews-search-2.json",
+      "/tmp/bn-orlando-altamonte-reviews.json",
+      "/tmp/bn-orlando-lakeland-reviews.json",
+      "/tmp/bn-orlando-melbourne-reviews.json"
+    ],
+    "keyword_method": "Keywords are pulled from public review/search snippets where store-specific snippets were found. For new or not-yet-open stores, user-review keywords are left empty and official/context keywords are stored separately."
+  },
+  "locations": [
+    {
+      "store_id": 3556,
+      "name": "Lake Nona",
+      "official_store_url": "https://stores.barnesandnoble.com/store/3556",
+      "address": {
+        "line1": "Lake Nona West",
+        "line2": "6039 Lake Nona Blvd",
+        "city": "Orlando",
+        "state": "FL",
+        "zip": "32827",
+        "formatted": "Lake Nona West, 6039 Lake Nona Blvd, Orlando, FL 32827"
+      },
+      "phone": "321-513-3340",
+      "coordinates": {
+        "latitude": 28.3650444,
+        "longitude": -81.3024928
+      },
+      "distance_mi_from_base": 2.63,
+      "open_date": "2026-06-10",
+      "open_year": 2026,
+      "opening_status": "open",
+      "hours_summary": "Sun 11-7, Mon-Sat 10-9",
+      "features": {
+        "cafe": true,
+        "toys_games": true,
+        "vinyl": true,
+        "electronics": false,
+        "discovery": false,
+        "used_books": false
+      },
+      "official_description": "Located in Lake Nona near Orlando with books, Toys and Games, Collectibles, and booksellers ready to help find books or gifts.",
+      "review_summary": {
+        "rating": null,
+        "review_count": null,
+        "source_label": null,
+        "source_url": null,
+        "confidence": "none",
+        "notes": "New store opened June 10, 2026; no reliable store-specific user-review corpus found yet."
+      },
+      "keywords": {
+        "user_review_keywords": [],
+        "official_or_context_keywords": [
+          "new store",
+          "grand opening",
+          "Lake Nona West",
+          "curated collection",
+          "gifts",
+          "educational resources",
+          "storytimes",
+          "family-friendly",
+          "community gathering place"
+        ],
+        "confidence": "official_context_only"
+      },
+      "keyword_evidence": [
+        {
+          "source_label": "Barnes & Noble Inc. press release",
+          "source_url": "https://www.barnesandnobleinc.com/press-release/barnes-noble-opens-new-store-orlando-fl/",
+          "evidence_type": "official/context",
+          "terms": [
+            "grand opening",
+            "new bookstore",
+            "Lake Nona community",
+            "local booksellers"
+          ]
+        },
+        {
+          "source_label": "Lake Nona Regional Chamber event page",
+          "source_url": "https://business.lakenonacc.org/events/Details/join-us-for-the-grand-opening-ribbon-cutting-celebration-of-barnes-noble-lake-nona-west-1760919?sourceTypeId=Website",
+          "evidence_type": "community/context",
+          "terms": [
+            "curated collection",
+            "gifts",
+            "educational resources",
+            "family-friendly experiences"
+          ]
+        }
+      ]
+    },
+    {
+      "store_id": 3588,
+      "name": "Vineland Pointe",
+      "official_store_url": "https://stores.barnesandnoble.com/store/3588",
+      "address": {
+        "line1": "11619 Regency Village Drive",
+        "line2": null,
+        "city": "Orlando",
+        "state": "FL",
+        "zip": "32821",
+        "formatted": "11619 Regency Village Drive, Orlando, FL 32821"
+      },
+      "phone": "321-238-8450",
+      "coordinates": {
+        "latitude": 28.3914951,
+        "longitude": -81.4870166
+      },
+      "distance_mi_from_base": 9.22,
+      "open_date": "2026-08-26",
+      "open_year": 2026,
+      "opening_status": "opening_soon",
+      "hours_summary": "Opening August 2026",
+      "features": {
+        "cafe": true,
+        "toys_games": false,
+        "vinyl": false,
+        "electronics": false,
+        "discovery": false,
+        "used_books": false
+      },
+      "official_description": "Located in Orange County with books, music, and more for locals and tourists.",
+      "review_summary": {
+        "rating": null,
+        "review_count": null,
+        "source_label": null,
+        "source_url": null,
+        "confidence": "none",
+        "notes": "Opening August 26, 2026; no user reviews expected yet."
+      },
+      "keywords": {
+        "user_review_keywords": [],
+        "official_or_context_keywords": [
+          "opening soon",
+          "tourist-friendly",
+          "local-friendly",
+          "books",
+          "music",
+          "cafe"
+        ],
+        "confidence": "official_context_only"
+      },
+      "keyword_evidence": [
+        {
+          "source_label": "Official Barnes & Noble locator/API description",
+          "source_url": "https://stores.barnesandnoble.com/store/3588",
+          "evidence_type": "official/context",
+          "terms": [
+            "Orange County",
+            "local or tourist",
+            "books",
+            "music"
+          ]
+        }
+      ]
+    },
+    {
+      "store_id": 2120,
+      "name": "Phoenicia Center",
+      "official_store_url": "https://stores.barnesandnoble.com/store/2120",
+      "address": {
+        "line1": "7900 W. Sand Lake Road",
+        "line2": null,
+        "city": "Orlando",
+        "state": "FL",
+        "zip": "32819",
+        "formatted": "7900 W. Sand Lake Road, Orlando, FL 32819"
+      },
+      "phone": "407-345-0900",
+      "coordinates": {
+        "latitude": 28.449267,
+        "longitude": -81.490534
+      },
+      "distance_mi_from_base": 10.28,
+      "open_date": "2002-11-20",
+      "open_year": 2002,
+      "opening_status": "open",
+      "hours_summary": "Sun 10-7, Mon-Sat 10-9",
+      "features": {
+        "cafe": true,
+        "toys_games": true,
+        "vinyl": true,
+        "electronics": false,
+        "discovery": false,
+        "used_books": false
+      },
+      "official_description": "Located between Walt Disney World, Universal Studios, and SeaWorld near Restaurant Row, Dr. Phillips Marketplace, Bay Hill Golf Course, and International Drive.",
+      "review_summary": {
+        "rating": 3.9,
+        "review_count": 62,
+        "source_label": "Yelp public search/page snippet",
+        "source_url": "https://www.yelp.com/biz/barnes-and-noble-orlando",
+        "confidence": "medium",
+        "notes": "Yelp search result gave a 3.9 rating with about 61 reviews; the page title showed 62 reviews."
+      },
+      "keywords": {
+        "user_review_keywords": [
+          "nice location",
+          "neat books",
+          "orderly shelves",
+          "bookstore browsing"
+        ],
+        "official_or_context_keywords": [
+          "near theme parks",
+          "Restaurant Row",
+          "Dr. Phillips",
+          "booklover destination",
+          "cafe",
+          "toys and games",
+          "vinyl"
+        ],
+        "confidence": "medium"
+      },
+      "keyword_evidence": [
+        {
+          "source_label": "Yelp public search result",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-orlando",
+          "evidence_type": "user_review_snippet",
+          "terms": [
+            "nice location",
+            "neat",
+            "in order"
+          ]
+        }
+      ]
+    },
+    {
+      "store_id": 2704,
+      "name": "Colonial",
+      "official_store_url": "https://stores.barnesandnoble.com/store/2704",
+      "address": {
+        "line1": "Colonial Plaza Market Center",
+        "line2": "2418 E Colonial Drive",
+        "city": "Orlando",
+        "state": "FL",
+        "zip": "32803",
+        "formatted": "Colonial Plaza Market Center, 2418 E Colonial Drive, Orlando, FL 32803"
+      },
+      "phone": "407-894-6024",
+      "coordinates": {
+        "latitude": 28.553253,
+        "longitude": -81.351703
+      },
+      "distance_mi_from_base": 11.33,
+      "open_date": "1996-11-20",
+      "open_year": 1996,
+      "opening_status": "open",
+      "hours_summary": "Sun 11-8, Mon-Sat 10-9",
+      "features": {
+        "cafe": true,
+        "toys_games": true,
+        "vinyl": false,
+        "electronics": false,
+        "discovery": false,
+        "used_books": false
+      },
+      "official_description": "Central Florida's largest B&N in the Milk District, with two levels of books, media, gifts, and more.",
+      "review_summary": {
+        "rating": 4.0,
+        "review_count": 87,
+        "source_label": "Yelp public search/page snippet",
+        "source_url": "https://www.yelp.com/biz/barnes-and-noble-orlando-5",
+        "confidence": "medium",
+        "notes": "Yelp search result gave a 4.0 rating with about 82 reviews; the page title showed 87 reviews."
+      },
+      "keywords": {
+        "user_review_keywords": [
+          "huge",
+          "wide selection",
+          "books",
+          "music",
+          "stationery",
+          "great coffee",
+          "home library browsing"
+        ],
+        "official_or_context_keywords": [
+          "two levels",
+          "media department",
+          "gifts",
+          "Milk District",
+          "locals and tourists"
+        ],
+        "confidence": "medium"
+      },
+      "keyword_evidence": [
+        {
+          "source_label": "Yelp public search result",
+          "source_url": "https://www.yelp.com/search?find_desc=Barnes+%26+Noble+Booksellers=&find_loc=Orlando,+FL",
+          "evidence_type": "user_review_snippet",
+          "terms": [
+            "huge",
+            "wide selection",
+            "music",
+            "stationery",
+            "great coffee"
+          ]
+        }
+      ]
+    },
+    {
+      "store_id": 3502,
+      "name": "Waterford Lakes",
+      "official_store_url": "https://stores.barnesandnoble.com/store/3502",
+      "address": {
+        "line1": "Waterford Lakes Town Center",
+        "line2": "331 N. Alafaya Trail",
+        "city": "Orlando",
+        "state": "FL",
+        "zip": "32828",
+        "formatted": "Waterford Lakes Town Center, 331 N. Alafaya Trail, Orlando, FL 32828"
+      },
+      "phone": "321-407-3302",
+      "coordinates": {
+        "latitude": 28.552347,
+        "longitude": -81.2008364
+      },
+      "distance_mi_from_base": 13.88,
+      "open_date": "2024-11-06",
+      "open_year": 2024,
+      "opening_status": "open",
+      "hours_summary": "Sun 10-7, Mon-Sat 9-9",
+      "features": {
+        "cafe": false,
+        "toys_games": false,
+        "vinyl": false,
+        "electronics": false,
+        "discovery": false,
+        "used_books": false
+      },
+      "official_description": "Waterford Lakes Town Center store focused on helping visitors find their next read or a gift.",
+      "review_summary": {
+        "rating": 4.8,
+        "review_count": 11,
+        "source_label": "Yelp public search snippet",
+        "source_url": "https://www.yelp.com/search?find_desc=Barnes+&+Noble=&find_loc=Waterford+Lakes%2C+Orlando%2C+FL+32828",
+        "confidence": "medium",
+        "notes": "Yelp result appears to refer to the Waterford Lakes B&N area; verify before treating as authoritative."
+      },
+      "keywords": {
+        "user_review_keywords": [
+          "well-organized",
+          "enjoyable",
+          "family outing",
+          "children's section",
+          "smaller kids area",
+          "rocks"
+        ],
+        "official_or_context_keywords": [
+          "Waterford Lakes",
+          "next favorite read",
+          "perfect gift"
+        ],
+        "confidence": "medium"
+      },
+      "keyword_evidence": [
+        {
+          "source_label": "Yelp public search result",
+          "source_url": "https://www.yelp.com/search?find_desc=Barnes+&+Noble=&find_loc=Waterford+Lakes%2C+Orlando%2C+FL+32828",
+          "evidence_type": "user_review_snippet",
+          "terms": [
+            "well-organized",
+            "enjoyable",
+            "children's section",
+            "family outing"
+          ]
+        }
+      ]
+    },
+    {
+      "store_id": 2188,
+      "name": "Altamonte Mall",
+      "official_store_url": "https://stores.barnesandnoble.com/store/2188",
+      "address": {
+        "line1": "451 E. Altamonte Drive",
+        "line2": null,
+        "city": "Altamonte Springs",
+        "state": "FL",
+        "zip": "32701",
+        "formatted": "451 E. Altamonte Drive, Altamonte Springs, FL 32701"
+      },
+      "phone": "407-261-0252",
+      "coordinates": {
+        "latitude": 28.664037,
+        "longitude": -81.377377
+      },
+      "distance_mi_from_base": 19.11,
+      "open_date": "2004-09-15",
+      "open_year": 2004,
+      "opening_status": "open",
+      "hours_summary": "Sun 11-7, Mon-Sat 10-9",
+      "features": {
+        "cafe": true,
+        "toys_games": true,
+        "vinyl": true,
+        "electronics": false,
+        "discovery": false,
+        "used_books": false
+      },
+      "official_description": "Altamonte Mall store with an external mall entrance, books, toys and games, vinyl, collectibles, and a cafe.",
+      "review_summary": {
+        "rating": 3.6,
+        "review_count": 58,
+        "source_label": "Yelp public search/page snippet",
+        "source_url": "https://www.yelp.com/biz/barnes-and-noble-altamonte-springs",
+        "confidence": "medium",
+        "notes": "Yelp page title showed 58 reviews; a search result for Altamonte Springs showed a 3.6 rating with 59 reviews."
+      },
+      "keywords": {
+        "user_review_keywords": [
+          "comfortable",
+          "attentive staff",
+          "great variety",
+          "cozy cafe",
+          "Starbucks",
+          "kids section",
+          "friendly staff",
+          "helpful staff",
+          "knowledgeable staff"
+        ],
+        "official_or_context_keywords": [
+          "external mall entrance",
+          "near I-4",
+          "Crane's Roost",
+          "AMC Theater",
+          "toys and games",
+          "vinyl",
+          "collectibles"
+        ],
+        "confidence": "high"
+      },
+      "keyword_evidence": [
+        {
+          "source_label": "Nextdoor public snippet",
+          "source_url": "https://nextdoor.com/pages/barnes-noble-booksellers-altamonte-springs-fl/",
+          "evidence_type": "review_summary_snippet",
+          "terms": [
+            "great variety",
+            "toys",
+            "kids section",
+            "Starbucks",
+            "cozy cafe"
+          ]
+        },
+        {
+          "source_label": "Loc8NearMe public snippet",
+          "source_url": "https://www.loc8nearme.com/florida/altamonte-springs/barnes-and-noble/58100/",
+          "evidence_type": "review_summary_snippet",
+          "terms": [
+            "friendly",
+            "helpful",
+            "knowledgeable",
+            "outstanding customer service"
+          ]
+        }
+      ]
+    },
+    {
+      "store_id": 2945,
+      "name": "B. Dalton at Oviedo Mall",
+      "official_store_url": "https://stores.barnesandnoble.com/store/2945",
+      "address": {
+        "line1": "B. Dalton Oviedo Mall",
+        "line2": "1260 Oviedo Mall Blvd",
+        "city": "Oviedo",
+        "state": "FL",
+        "zip": "32765",
+        "formatted": "B. Dalton Oviedo Mall, 1260 Oviedo Mall Blvd, Oviedo, FL 32765"
+      },
+      "phone": "407-977-5500",
+      "coordinates": {
+        "latitude": 28.664291,
+        "longitude": -81.237638
+      },
+      "distance_mi_from_base": 19.86,
+      "open_date": "1998-07-29",
+      "open_year": 1998,
+      "opening_status": "open",
+      "hours_summary": "Sun 12-6, Mon-Sat 10-9",
+      "features": {
+        "cafe": true,
+        "toys_games": true,
+        "vinyl": false,
+        "electronics": false,
+        "discovery": false,
+        "used_books": false
+      },
+      "official_description": "Curated B. Dalton selection of books and gifts in a quiet, inviting atmosphere with an attached cafe.",
+      "review_summary": {
+        "rating": null,
+        "review_count": 23,
+        "source_label": "Yelp/RestaurantGuru public snippets",
+        "source_url": "https://restaurantguru.com/Barnes-and-Noble-Oviedo-Florida",
+        "confidence": "medium",
+        "notes": "Yelp references the old Barnes & Noble Booksellers listing as closed; RestaurantGuru snippet appears to describe the cafe/store experience."
+      },
+      "keywords": {
+        "user_review_keywords": [
+          "great service",
+          "friendly staff",
+          "fair prices",
+          "nice atmosphere"
+        ],
+        "official_or_context_keywords": [
+          "curated selection",
+          "quiet",
+          "inviting",
+          "attached cafe",
+          "books and gifts"
+        ],
+        "confidence": "medium"
+      },
+      "keyword_evidence": [
+        {
+          "source_label": "RestaurantGuru public snippet",
+          "source_url": "https://restaurantguru.com/Barnes-and-Noble-Oviedo-Florida",
+          "evidence_type": "review_summary_snippet",
+          "terms": [
+            "great service",
+            "friendly staff",
+            "fair prices",
+            "nice atmosphere"
+          ]
+        }
+      ]
+    },
+    {
+      "store_id": 3568,
+      "name": "Lakeland",
+      "official_store_url": "https://stores.barnesandnoble.com/store/3568",
+      "address": {
+        "line1": "Merchants Walk",
+        "line2": "3615 S Florida Ave Ste 930",
+        "city": "Lakeland",
+        "state": "FL",
+        "zip": "33803",
+        "formatted": "Merchants Walk, 3615 S Florida Ave Ste 930, Lakeland, FL 33803"
+      },
+      "phone": "863-315-9114",
+      "coordinates": {
+        "latitude": 27.9994611,
+        "longitude": -81.9592694
+      },
+      "distance_mi_from_base": 46.6,
+      "open_date": "2025-11-19",
+      "open_year": 2025,
+      "opening_status": "open",
+      "hours_summary": "Sun 10-7, Mon-Sat 9-9",
+      "features": {
+        "cafe": false,
+        "toys_games": true,
+        "vinyl": true,
+        "electronics": false,
+        "discovery": false,
+        "used_books": false
+      },
+      "official_description": "Merchants Walk store with books, toys, games, and collectibles.",
+      "review_summary": {
+        "rating": 2.5,
+        "review_count": 3,
+        "source_label": "Yahoo Local public snippet",
+        "source_url": "https://local.yahoo.com/info-240367795-barnes-noble-lakeland/",
+        "confidence": "low",
+        "notes": "Newer store with very low public review volume; Facebook snippet reported not yet rated at time of indexing."
+      },
+      "keywords": {
+        "user_review_keywords": [
+          "new store",
+          "photos",
+          "anime store",
+          "pen shops",
+          "greeting cards",
+          "gift shops"
+        ],
+        "official_or_context_keywords": [
+          "Merchants Walk",
+          "books",
+          "toys",
+          "games",
+          "magazines",
+          "gift items",
+          "collectibles"
+        ],
+        "confidence": "low"
+      },
+      "keyword_evidence": [
+        {
+          "source_label": "Yahoo Local public snippet",
+          "source_url": "https://local.yahoo.com/info-240367795-barnes-noble-lakeland/",
+          "evidence_type": "rating_snippet",
+          "terms": [
+            "2.5 rating",
+            "3 reviews"
+          ]
+        },
+        {
+          "source_label": "Yelp public listing snippet",
+          "source_url": "https://www.yelp.com/biz/barnes-and-noble-lakeland",
+          "evidence_type": "listing/search_terms",
+          "terms": [
+            "anime",
+            "pen shop",
+            "greeting cards",
+            "gift shops"
+          ]
+        }
+      ]
+    },
+    {
+      "store_id": 3573,
+      "name": "Melbourne",
+      "official_store_url": "https://stores.barnesandnoble.com/store/3573",
+      "address": {
+        "line1": "Shoppes of West Melbourne",
+        "line2": "1557 W New Haven Ave",
+        "city": "Melbourne",
+        "state": "FL",
+        "zip": "32904",
+        "formatted": "Shoppes of West Melbourne, 1557 W New Haven Ave, Melbourne, FL 32904"
+      },
+      "phone": "321-513-3339",
+      "coordinates": {
+        "latitude": 28.0772601,
+        "longitude": -80.6468074
+      },
+      "distance_mi_from_base": 47.15,
+      "open_date": "2026-03-11",
+      "open_year": 2026,
+      "opening_status": "open",
+      "hours_summary": "Sun 11-7, Mon-Sat 9-9",
+      "features": {
+        "cafe": true,
+        "toys_games": true,
+        "vinyl": true,
+        "electronics": false,
+        "discovery": false,
+        "used_books": false
+      },
+      "official_description": "Neighborhood bookstore with books for all ages, expanded gifts, toys, media, and a cafe.",
+      "review_summary": {
+        "rating": null,
+        "review_count": null,
+        "source_label": "Loc8NearMe/Wheree/Foursquare public snippets",
+        "source_url": "https://www.loc8nearme.com/florida/west-melbourne/barnes-and-noble/376976/",
+        "confidence": "medium",
+        "notes": "Some snippets appear to refer to prior or nearby Melbourne/West Melbourne B&N identity; address should be verified when using rating history."
+      },
+      "keywords": {
+        "user_review_keywords": [
+          "large selection",
+          "clean",
+          "colorful",
+          "friendly environment",
+          "reasonable prices",
+          "organized layout",
+          "appealing displays",
+          "wifi",
+          "coffee"
+        ],
+        "official_or_context_keywords": [
+          "neighborhood bookstore",
+          "all ages",
+          "expanded gifts",
+          "toys",
+          "media",
+          "cafe"
+        ],
+        "confidence": "medium"
+      },
+      "keyword_evidence": [
+        {
+          "source_label": "Loc8NearMe public snippet",
+          "source_url": "https://www.loc8nearme.com/florida/west-melbourne/barnes-and-noble/376976/",
+          "evidence_type": "review_summary_snippet",
+          "terms": [
+            "large selection",
+            "clean",
+            "colorful",
+            "friendly",
+            "reasonable prices"
+          ]
+        },
+        {
+          "source_label": "Foursquare public snippet",
+          "source_url": "https://foursquare.com/v/barnes--noble/4b20430df964a520912f24e3",
+          "evidence_type": "tip_summary",
+          "terms": [
+            "books",
+            "wifi",
+            "coffee"
+          ]
+        }
+      ]
+    }
+  ]
+}
