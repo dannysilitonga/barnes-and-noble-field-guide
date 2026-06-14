@@ -14,6 +14,21 @@ This repo is the deployable Barnes & Noble field guide:
 
 The workspace root also has `../AGENTS.md` with longer historical notes when this repo is opened from the original `weekend_gateaways` workspace.
 
+## ⚠️ Pending Work — Table Redesign (requested 2026-06-13, DO NEXT)
+
+The user asked for a leaner table and started this redesign right after the "Review keywords" column shipped. **No code changes were made yet** — this is the next task. Implement these, then verify + deploy (see Verification / Vercel sections).
+
+1. **Fix the table getting cut off.** Adding the keyword column pushed `table { min-width: 1320px }` (in `styles.css`) wider than the container on typical laptop widths, so the rightmost columns (Score, Review keywords) sit off the right edge and the horizontal scroll inside `.table-shell` isn't obvious. Removing the two columns below should let it fit; re-tighten `min-width` and re-check at ~1280px desktop and 390px mobile (no page-level horizontal overflow; the table may still scroll inside `.table-shell`).
+2. **Remove the "Reviews idx" column** (the `rev` display — it is the review-volume score, log-normalized 0–5). The user wants to **keep the Rating column** (stars + review count). ⚠️ **Keep the `rev` field in `DATA` and in the score formula** — only delete its entry from `COLS` and its `<td>` in `renderLocationRow`. `score = 0.50*rating + 0.30*closeness + 0.20*review_score` still consumes it.
+3. **Remove the "Closeness" column** (the `close` display) — the user questioned its value. ⚠️ Same rule: **keep the `close` field for scoring**, remove only the displayed column. (Confirm hide-vs-remove with the user; they leaned toward removing.)
+4. **Change "Distance" from straight-line miles to DRIVING TIME** from Brooklyn Borough Hall (`40.6928, -73.9903`). This needs **new data** — the inline NJ `DATA` only has `dist` (straight-line miles), **no per-store coordinates**:
+   - Get each store's lat/long (re-fetch from the B&N locator API — it returns coordinates, like `data/orlando_locations.json` does — or geocode the addresses already in `DATA`).
+   - Compute driving duration from Brooklyn Borough Hall via a routing API (OSRM public `router.project-osrm.org` is free/keyless; Google or Mapbox Distance Matrix are alternatives). Store as a new `drive` field (e.g. minutes / "38 min").
+   - Display `drive` in that column (rename header to "Drive time"). **Keep `dist` for the closeness/score calc**, OR re-base closeness on drive time — that's an open decision for the user.
+   - Update the footer/notes caveat (currently "approximate straight-line miles…").
+
+**Open decisions to confirm with the user before/while implementing:** (a) remove Closeness entirely vs just hide it; (b) driving-time source (free OSRM vs keyed Google/Mapbox) and whether the score's `closeness` should be re-based on drive time or stay straight-line under the hood; (c) whether to mirror this redesign on the Orlando page (`../orlando/`, a separate standalone clone — changes here do NOT propagate; Orlando already has coordinates so drive time is easier there).
+
 ## Product Scope
 
 The current page ranks Barnes & Noble locations in New Jersey and the lower Hudson Valley for trips from Brooklyn. It intentionally excludes NYC, Long Island, and Connecticut entries, even when they appeared in the Barnes & Noble locator.
