@@ -26,6 +26,7 @@ The report includes:
 - Open year when available from Barnes & Noble store data.
 - Cafe status when available from Barnes & Noble store data.
 - A score that accounts for rating quality, distance, and review volume.
+- Keywords drawn from user reviews (joined from `data/ny_nj_keywords.json` via the `KW` map in `app.js`), shown as a non-sortable, searchable "Review keywords" column.
 
 Current score formula:
 

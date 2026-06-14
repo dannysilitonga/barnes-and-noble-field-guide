@@ -33,10 +33,68 @@
       { rank:null, name:"Middletown", id:3624, region:"NY", addr:"Galleria at Crystal Run, 1 Galleria Drive D110, Middletown, NY 10941", opened:2026, dist:56.1, rating:null, reviews:null, rev:null, cafe:true, close:null, score:null, src:null, soon:"Opens Nov 2026" }
     ];
 
+    // Review-keyword lookup, derived from data/ny_nj_keywords.json (join on store id).
+    // u = user-review keywords, x = official/context fallback, c = confidence.
+    const KW = {
+      2932:{u:["upscale","great staff","relax and read","large store","coffee","comfortable browsing"],x:["Clifton Commons","cafe","books"],c:"medium"},
+      2889:{u:["flagship","Central Avenue staple","friendly staff","broad selection","cafe","last of a dying breed"],x:["Central Plaza","cafe","books"],c:"medium"},
+      2162:{u:["two-story","warm atmosphere","cozy read","coffee","extensive collection","shopping-center browsing"],x:["Menlo Park Mall","Edison","cafe"],c:"medium"},
+      2924:{u:["extensive selection","well-organized","cozy seating","Starbucks","children's section","story sessions","friendly staff","knowledgeable staff","ample parking"],x:["Brunswick Square Mall","cafe","books"],c:"high"},
+      2980:{u:[],x:["longstanding location","Morris Plains","cafe"],c:"low"},
+      2905:{u:["wanderable","mall location","coffee","great location","terrific staff","spectacular service","garage parking","100% recommend"],x:["Palisades Center","West Nyack","cafe"],c:"medium"},
+      2609:{u:[],x:["booksellers","bookstore","toy store"],c:"low"},
+      2140:{u:["extensive selection","toys","educational items","friendly staff","knowledgeable staff","welcoming atmosphere","cozy kids corner","Starbucks","help desk","books in stock"],x:["Bridgewater","Somerset Shopping Center","cafe"],c:"high"},
+      3448:{u:["comfortable","coffee","snacks","family-friendly","teen study spot","nice atmosphere","modern store"],x:["Fashion Center","Paramus","cafe"],c:"medium"},
+      3421:{u:["clean","organized","inviting","pleasant staff","helpful staff","well-stocked children's area"],x:["Commons at Holmdel","cafe","books"],c:"medium"},
+      2897:{u:["private lot parking","dogs allowed","neighborhood bookstore"],x:["Cortlandt Town Center","bookstore","toy store"],c:"low"},
+      3424:{u:[],x:["storytime","summer reading","community events"],c:"official_context_only"},
+      2215:{u:["recommended"],x:["curbside pickup","bookstore","community page"],c:"low"},
+      1977:{u:[],x:["department-store listing","shopping","bookstore"],c:"low"},
+      2886:{u:["stylish","dependable","huge selection","well-organized","kids section","puzzle books","clean environment","comfortable reading areas"],x:["South Road","Poughkeepsie","cafe"],c:"medium"},
+      3468:{u:["back in town","nicely done","welcoming service","new setup","grand opening"],x:["Ledgewood Commons","newer store","bookstore"],c:"medium"},
+      3405:{u:["positive experience","well-organized","comfortable browsing","curated selection","wifi","work space","coffee shop","tables","parking","alcoves"],x:["Kings Mall","Kingston","cafe"],c:"medium"},
+      3311:{u:["friendly comfortable environment","work/study cafe"],x:["Starbucks beverage","bakery pastry","cafe sandwich"],c:"low"},
+      3558:{u:[],x:["newer store","Clark Commons","books"],c:"official_context_only"},
+      2340:{u:["huge","quiet spot","sit and relax","rainy day","usually has what I need","helpful staff"],x:["Livingston","cafe","bookstore"],c:"medium"},
+      3590:{u:[],x:["opening soon","Livingston Shopping Center","cafe"],c:"official_context_only"},
+      3304:{u:[],x:["large review volume","bookstore","cafe"],c:"low"},
+      3626:{u:[],x:["opening soon","cafe","new store"],c:"official_context_only"},
+      3445:{u:["modernized","good location","newer format"],x:["Dalewood II","Hartsdale","bookstore"],c:"low"},
+      3591:{u:[],x:["opening soon","Brunswick Square","cafe"],c:"official_context_only"},
+      3422:{u:["large store","Jersey Shore","brand new store","open","favorite bookstore"],x:["Monmouth Square","Eatontown","cafe"],c:"medium"},
+      3488:{u:["new store smell","clearly arranged sections","modernized","standard selection","not big overall"],x:["books","toys","games"],c:"medium"},
+      2368:{u:["Princeton hands-down","good book store","vinyl","large review volume"],x:["Market Fair","Princeton","cafe"],c:"low"},
+      2803:{u:[],x:["member perks","free shipping","booksellers"],c:"low"},
+      2217:{u:["excellent","comfy chairs","rewards program","lattes","magazines","books galore","page books"],x:["Hamilton Marketplace","cafe","bookstore"],c:"medium"},
+      3624:{u:[],x:["opening soon","Galleria at Crystal Run","19000 square feet"],c:"official_context_only"}
+    };
+
     const storeUrl = id => "https://stores.barnesandnoble.com/store/" + id;
     const regionName = r => r === "NJ" ? "New Jersey" : "Hudson Valley";
     const fmt = n => n == null ? "" : Number(n).toLocaleString();
     const scoreClass = s => s == null ? "s-lo" : s >= 4.4 ? "s-hi" : s >= 4.0 ? "s-mid" : "s-lo";
+    const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+    /* ---- Review-keyword cell ---- */
+    function kwCell(d) {
+      const k = KW[d.id];
+      if (!k) return `<span class="na">—</span>`;
+      const conf = k.c ? k.c.replace(/_/g, " ") : "";
+      if (k.u && k.u.length) {
+        const shown = k.u.slice(0, 3);
+        const extra = k.u.length - shown.length;
+        const chips = shown.map(t => `<span class="kw-chip">${esc(t)}</span>`).join("");
+        const more = extra > 0 ? `<span class="kw-more">+${extra}</span>` : "";
+        const title = `Review keywords: ${k.u.join(", ")}${conf ? ` · ${conf} confidence` : ""}`;
+        return `<div class="kw-cell" title="${esc(title)}" aria-label="${esc(title)}">${chips}${more}</div>`;
+      }
+      if (k.x && k.x.length) {
+        const chips = k.x.slice(0, 2).map(t => `<span class="kw-chip ctx">${esc(t)}</span>`).join("");
+        const title = `Context keywords (no review snippets found): ${k.x.join(", ")}`;
+        return `<div class="kw-cell" title="${esc(title)}" aria-label="${esc(title)}">${chips}</div>`;
+      }
+      return `<span class="na">—</span>`;
+    }
 
     /* ---- Gallery (top 3, fixed) ---- */
     function renderGallery() {
@@ -74,7 +132,8 @@
       { key:"rev",    label:"Reviews idx", num:true, align:"r" },
       { key:"cafe",   label:"Café",      num:false },
       { key:"close",  label:"Closeness", num:true,  align:"r" },
-      { key:"score",  label:"Score",     num:true,  align:"r" }
+      { key:"score",  label:"Score",     num:true,  align:"r" },
+      { key:"kw",     label:"Review keywords", num:false, sortable:false }
     ];
 
     const DEFAULT_VISIBLE_ROWS = 16;
@@ -82,9 +141,13 @@
 
     function renderHead() {
       document.getElementById("head-row").innerHTML = COLS.map(c => {
+        const cls = c.align === "r" ? "r" : "";
+        if (c.sortable === false) {
+          return `<th scope="col" class="${cls} static">${c.label}</th>`;
+        }
         const active = state.sortKey === c.key;
         const arr = active ? (state.sortDir === "asc" ? "▲" : "▼") : "";
-        return `<th scope="col" class="${c.align === "r" ? "r" : ""}"${active ? ` aria-sort="${state.sortDir === "asc" ? "ascending" : "descending"}"` : ""}>
+        return `<th scope="col" class="${cls}"${active ? ` aria-sort="${state.sortDir === "asc" ? "ascending" : "descending"}"` : ""}>
           <button data-key="${c.key}" type="button">${c.label}<span class="arr">${arr}</span></button></th>`;
       }).join("");
       document.querySelectorAll("#head-row button").forEach(b =>
@@ -107,7 +170,9 @@
     function passSearch(d) {
       const q = state.search.trim().toLowerCase();
       if (!q) return true;
-      return (d.name + " " + d.addr + " " + d.id + " " + regionName(d.region)).toLowerCase().includes(q);
+      const k = KW[d.id];
+      const kwText = k ? [...(k.u || []), ...(k.x || [])].join(" ") : "";
+      return (d.name + " " + d.addr + " " + d.id + " " + regionName(d.region) + " " + kwText).toLowerCase().includes(q);
     }
 
     function compare(a, b) {
@@ -147,6 +212,7 @@
           <td>${cafePill}</td>
           <td class="r num dim">${d.close == null ? "—" : d.close.toFixed(2)}</td>
           <td class="r">${d.score == null ? `<span class="na">unscored</span>` : `<span class="score-pill ${scoreClass(d.score)}">${d.score.toFixed(2)}</span>`}</td>
+          <td class="kw-td">${kwCell(d)}</td>
         </tr>`;
     }
 
