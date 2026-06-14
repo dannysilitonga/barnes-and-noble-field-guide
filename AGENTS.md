@@ -47,7 +47,7 @@ Ratings and review counts are less reproducible:
 - Each rating source is linked row-by-row.
 - Rows without reliable store-specific snippets are left unscored rather than guessed.
 
-If rebuilding data, prefer structured Barnes & Noble payload/API data over brittle HTML scraping. BeautifulSoup is acceptable when needed, but checked-in structured data would be a better next step. The report's row data currently lives **inline in `app.js`** (the `DATA` array); `data/` holds research notes — `ny_nj_keywords.json` (review keywords for the current rows) and `orlando_locations.json` (seed data for the planned Orlando guide; see Likely Next Steps). A future generator could formalize this, e.g.:
+If rebuilding data, prefer structured Barnes & Noble payload/API data over brittle HTML scraping. BeautifulSoup is acceptable when needed, but checked-in structured data would be a better next step. The report's row data currently lives **inline in `app.js`** (the `DATA` array); `data/` holds research notes — `ny_nj_keywords.json` (review keywords for the current rows, surfaced via the `KW` map as the "Review keywords" column). The Orlando seed data that used to live here has moved to its own repo (see Likely Next Steps). A future generator could formalize this, e.g.:
 
 - `generate_report.py`
 - `data/locations.json`
@@ -136,7 +136,7 @@ The repo was ahead of `origin/main` locally after adding Vercel skills and deplo
 
 ## Likely Next Steps
 
-1. **Greater-Orlando, FL field guide — the user's next project.** Seed data is already committed at `data/orlando_locations.json` (metadata + a `locations` array, 9 records so far). Model it on this Brooklyn guide: same scoring formula, closeness from a chosen Orlando base point, unscored rows where ratings are unreliable, the `index.html`/`styles.css`/`app.js` split, and the same warm field-guide design + WCAG AA contrast. Confirm with the user whether Orlando ships in this repo (multi-metro) or as its own project before structuring.
+1. **Greater-Orlando, FL field guide — shipped as its own repo (June 13, 2026).** Decision: standalone, not multi-metro in this repo. It lives at `github.com/dannysilitonga/barnes-and-noble-orlando-field-guide` (private) and deploys to Vercel only at `https://barnes-and-noble-orlando-field-guid.vercel.app`. Built as a standalone clone of this guide (same scoring formula and design; Area/city column and feature filters instead of state regions). The `data/orlando_locations.json` seed moved into that repo. In the workspace it is the sibling `../orlando/` folder.
 2. In Vercel account settings, add the GitHub Login Connection if automatic git-push deploys are desired.
 3. If this project grows beyond a static page, add a reproducible data generator before migrating frameworks.
 4. Defer Next.js until there is a real need for routes, components, generated pages, server-side data, API routes, image optimization, or ISR.
