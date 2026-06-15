@@ -135,6 +135,8 @@ vercel inspect barnes-and-noble-field-guide.vercel.app --scope danny-silitongas-
 
 Important caveat: `vercel link --repo --scope danny-silitongas-projects` found no existing Vercel project connected to the GitHub repo. Standard linking created the Vercel project, but connecting the GitHub repository failed because the Vercel account needs a GitHub Login Connection. Until that is fixed in Vercel account settings, do not assume git pushes trigger Vercel deployments.
 
+**Git author email gotcha (learned 2026-06-15):** Vercel attributes each CLI deploy to the **git commit author email**. Commits must be authored by `dannysilitonga@gmail.com` (the Vercel account email). The old `dannysilitonga@yahoo.com` is **abandoned — never use it**; the standard fallback git email is `dsilitonga@gradcenter.cuny.edu`. The private Orlando sibling project BLOCKS deploys whose author isn't a verified team member (`readyState:BLOCKED`, `seatBlock TEAM_ACCESS_REQUIRED`); this public Brooklyn project currently does not enforce it, but author your commits as gmail anyway. `git config user.email` is set to gmail globally and in this repo.
+
 ## Git State Notes
 
 Before this handoff file was added, recent commits included:
