@@ -14,20 +14,16 @@ This repo is the deployable Barnes & Noble field guide:
 
 The workspace root also has `../AGENTS.md` with longer historical notes when this repo is opened from the original `weekend_gateaways` workspace.
 
-## ⚠️ Pending Work — Table Redesign (requested 2026-06-13, DO NEXT)
+## ✅ Table Redesign — Shipped 2026-06-15
 
-The user asked for a leaner table and started this redesign right after the "Review keywords" column shipped. **No code changes were made yet** — this is the next task. Implement these, then verify + deploy (see Verification / Vercel sections).
+The leaner table redesign requested 2026-06-13 is **done**, mirrored on both this page and the Orlando sibling (`../orlando/`). What changed:
 
-1. **Fix the table getting cut off.** Adding the keyword column pushed `table { min-width: 1320px }` (in `styles.css`) wider than the container on typical laptop widths, so the rightmost columns (Score, Review keywords) sit off the right edge and the horizontal scroll inside `.table-shell` isn't obvious. Removing the two columns below should let it fit; re-tighten `min-width` and re-check at ~1280px desktop and 390px mobile (no page-level horizontal overflow; the table may still scroll inside `.table-shell`).
-2. **Remove the "Reviews idx" column** (the `rev` display — it is the review-volume score, log-normalized 0–5). The user wants to **keep the Rating column** (stars + review count). ⚠️ **Keep the `rev` field in `DATA` and in the score formula** — only delete its entry from `COLS` and its `<td>` in `renderLocationRow`. `score = 0.50*rating + 0.30*closeness + 0.20*review_score` still consumes it.
-3. **Remove the "Closeness" column** (the `close` display) — the user questioned its value. ⚠️ Same rule: **keep the `close` field for scoring**, remove only the displayed column. (Confirm hide-vs-remove with the user; they leaned toward removing.)
-4. **Change "Distance" from straight-line miles to DRIVING TIME** from Brooklyn Borough Hall (`40.6928, -73.9903`). This needs **new data** — the inline NJ `DATA` only has `dist` (straight-line miles), **no per-store coordinates**:
-   - Get each store's lat/long (re-fetch from the B&N locator API — it returns coordinates, like `data/orlando_locations.json` does — or geocode the addresses already in `DATA`).
-   - Compute driving duration from Brooklyn Borough Hall via a routing API (OSRM public `router.project-osrm.org` is free/keyless; Google or Mapbox Distance Matrix are alternatives). Store as a new `drive` field (e.g. minutes / "38 min").
-   - Display `drive` in that column (rename header to "Drive time"). **Keep `dist` for the closeness/score calc**, OR re-base closeness on drive time — that's an open decision for the user.
-   - Update the footer/notes caveat (currently "approximate straight-line miles…").
+1. **Cutoff fixed.** `table { min-width }` dropped from 1320px to **1080px** (`styles.css`); the table now fits inside `.table-shell` at ~1280px with no page-level overflow, and still scrolls inside the shell on narrow widths (verified at 390px).
+2. **"Reviews idx" (`rev`) and "Closeness" (`close`) columns are hidden, not removed.** Both keep their `DATA` fields (they feed the score) and their `COLS` entries, now flagged `hidden:true`. `renderHead` iterates `VISIBLE = COLS.filter(c => !c.hidden)`; the row guards those two cells with `shown("rev")`/`shown("close")`; the reveal-row colspan uses `VISIBLE.length`. **Flip `hidden:false` to surface either column again.**
+3. **Distance → Drive time.** Each row has a new integer `drive` field (minutes), formatted by `driveFmt()` ("31 min" / "1 hr 32 min"). The old straight-line `dist` field stays in `DATA` as a reference but is no longer displayed or scored.
+4. **Closeness re-based on drive time.** `closeness` is now the min–max normalization of **OSRM driving time** from Brooklyn Borough Hall over the scored set (shortest drive = 5). All `close`/`score`/`rank` values were recomputed and inlined; the formula is unchanged (`0.50*rating + 0.30*closeness + 0.20*review_score`). Ranks shifted where straight-line was misleading (e.g., Holmdel/Freehold slipped, Paramus/Woodland Park/Union Plaza rose).
 
-**Open decisions to confirm with the user before/while implementing:** (a) remove Closeness entirely vs just hide it; (b) driving-time source (free OSRM vs keyed Google/Mapbox) and whether the score's `closeness` should be re-based on drive time or stay straight-line under the hood; (c) whether to mirror this redesign on the Orlando page (`../orlando/`, a separate standalone clone — changes here do NOT propagate; Orlando already has coordinates so drive time is easier there).
+**Data provenance:** per-store coordinates were geocoded (US Census + OSM Nominatim POI fallback), spot-verified, and routed from Brooklyn Borough Hall (`40.6928, -73.9903`) with the free/keyless OSRM public API (`router.project-osrm.org`). Coordinates + drive times are recorded in `data/ny_nj_coords.json`. Drive times are typical no-traffic estimates; real traffic runs longer.
 
 ## Product Scope
 
@@ -36,11 +32,11 @@ The current page ranks Barnes & Noble locations in New Jersey and the lower Huds
 The report includes:
 
 - Location name and address.
-- Approximate straight-line distance from Brooklyn Borough Hall at `40.6928, -73.9903`.
+- Driving time from Brooklyn Borough Hall at `40.6928, -73.9903` (OSRM, typical no-traffic).
 - Google rating and review count when a store-specific public snippet was found.
 - Open year when available from Barnes & Noble store data.
 - Cafe status when available from Barnes & Noble store data.
-- A score that accounts for rating quality, distance, and review volume.
+- A score that accounts for rating quality, driving proximity, and review volume.
 - Keywords drawn from user reviews (joined from `data/ny_nj_keywords.json` via the `KW` map in `app.js`), shown as a non-sortable, searchable "Review keywords" column.
 
 Current score formula:
@@ -49,7 +45,7 @@ Current score formula:
 score = 0.50 * rating + 0.30 * closeness + 0.20 * review score
 ```
 
-`closeness` is normalized to 0-5, where closer to Brooklyn is better. `review score` is log-normalized to 0-5, so review count helps without overwhelming rating quality.
+`closeness` is the min–max normalization of driving time (OSRM) to Brooklyn Borough Hall across the scored set (0-5), where a shorter drive is higher. `review score` is log-normalized to 0-5, so review count helps without overwhelming rating quality.
 
 ## Data Caveats
 
@@ -62,7 +58,7 @@ Ratings and review counts are less reproducible:
 - Each rating source is linked row-by-row.
 - Rows without reliable store-specific snippets are left unscored rather than guessed.
 
-If rebuilding data, prefer structured Barnes & Noble payload/API data over brittle HTML scraping. BeautifulSoup is acceptable when needed, but checked-in structured data would be a better next step. The report's row data currently lives **inline in `app.js`** (the `DATA` array); `data/` holds research notes — `ny_nj_keywords.json` (review keywords for the current rows, surfaced via the `KW` map as the "Review keywords" column). The Orlando seed data that used to live here has moved to its own repo (see Likely Next Steps). A future generator could formalize this, e.g.:
+If rebuilding data, prefer structured Barnes & Noble payload/API data over brittle HTML scraping. BeautifulSoup is acceptable when needed, but checked-in structured data would be a better next step. The report's row data currently lives **inline in `app.js`** (the `DATA` array); `data/` holds research notes — `ny_nj_keywords.json` (review keywords for the current rows, surfaced via the `KW` map as the "Review keywords" column) and `ny_nj_coords.json` (per-store coordinates + OSRM drive times from Brooklyn Borough Hall, provenance for the Drive time column and the re-based closeness). The Orlando seed data that used to live here has moved to its own repo (see Likely Next Steps). A future generator could formalize this, e.g.:
 
 - `generate_report.py`
 - `data/locations.json`

@@ -55,7 +55,7 @@
         </div>
         <div class="table-shell">
           <table>
-            <caption class="sr-only">Barnes &amp; Noble locations near Brooklyn, sortable by rank, location, region, opening year, distance, rating, review index, cafe, closeness, and score, with a non-sortable column of keywords drawn from user reviews.</caption>
+            <caption class="sr-only">Barnes &amp; Noble locations near Brooklyn, sortable by rank, location, region, opening year, driving time from Brooklyn Borough Hall, rating, cafe, and score, with a non-sortable column of keywords drawn from user reviews.</caption>
             <thead><tr id="head-row"></tr></thead>
             <tbody id="body"></tbody>
           </table>
@@ -68,7 +68,7 @@
           <summary><span class="tw">▶</span> How the score works <span class="sd">rating · proximity · review volume</span></summary>
           <div class="fold-body">
             <p>Score = <code>0.50 × rating</code> + <code>0.30 × closeness</code> + <code>0.20 × review score</code>, all on a 0–5 scale.</p>
-            <p><b>Review score</b> is review volume log-normalized to 0–5, so a store with thousands of reviews gets credit without drowning out rating quality. <b>Closeness</b> normalizes straight-line distance to Brooklyn Borough Hall across the scored set — closer is higher. Driving distance will run longer than the miles shown.</p>
+            <p><b>Review score</b> is review volume log-normalized to 0–5, so a store with thousands of reviews gets credit without drowning out rating quality. <b>Closeness</b> normalizes the <b>driving time</b> from Brooklyn Borough Hall across the scored set — a shorter drive scores higher. The Reviews-idx and Closeness inputs aren't shown as columns, but the Drive time column reflects the same routing.</p>
           </div>
         </details>
         <details class="fold">
@@ -82,13 +82,13 @@
       <details class="fold" style="margin-bottom:18px">
         <summary><span class="tw">▶</span> Sources <span class="sd" id="src-count"></span></summary>
         <div class="fold-body">
-          <p>Locations, addresses, opening years, store links, and café flags come from the official Barnes &amp; Noble store locator. Ratings come from the per-row sources below.</p>
+          <p>Locations, addresses, opening years, store links, and café flags come from the official Barnes &amp; Noble store locator. Ratings come from the per-row sources below. Store coordinates were geocoded (US Census geocoder with an OpenStreetMap fallback) and drive times routed from Brooklyn Borough Hall with OSRM; coordinates are recorded in <code>data/ny_nj_coords.json</code>.</p>
           <ul id="sources"></ul>
         </div>
       </details>
 
       <footer>
-        Compiled June 12, 2026. Distances are approximate straight-line miles from Brooklyn Borough Hall (40.6928, −73.9903). Not affiliated with Barnes &amp; Noble — a personal field guide for planning a bookstore run.
+        Compiled June 12, 2026; drive times added June 15, 2026. Drive times are typical no-traffic estimates from Brooklyn Borough Hall (40.6928, −73.9903), routed with OSRM; real traffic will run longer. Not affiliated with Barnes &amp; Noble — a personal field guide for planning a bookstore run.
       </footer>
     </div>
   </main>

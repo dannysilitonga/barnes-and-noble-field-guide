@@ -1,0 +1,259 @@
+{
+  "origin": {
+    "name": "Brooklyn Borough Hall",
+    "lat": 40.6928,
+    "lon": -73.9903
+  },
+  "router": "OSRM public (router.project-osrm.org), driving profile, no traffic",
+  "geocoders": "US Census (Public_AR_Current) + OSM Nominatim POI fallback",
+  "stores": {
+    "2932": {
+      "lat": 40.82921,
+      "lon": -74.138657,
+      "drive_min": 31,
+      "drive_mi": 16.6,
+      "geocode_src": "nominatim",
+      "match": "Barnes & Noble, State Route 3, Delawanna, Clifton, Passaic County, New"
+    },
+    "2889": {
+      "lat": 40.985,
+      "lon": -73.824888,
+      "drive_min": 48,
+      "drive_mi": 27.0,
+      "geocode_src": "nominatim",
+      "match": "Barnes & Noble, 2614, Central Park Avenue, City of Yonkers, Westcheste"
+    },
+    "2162": {
+      "lat": 40.548872,
+      "lon": -74.334115,
+      "drive_min": 46,
+      "drive_mi": 27.7,
+      "geocode_src": "census",
+      "match": "55 PARSONAGE RD, EDISON, NJ, 08837"
+    },
+    "2924": {
+      "lat": 40.424609,
+      "lon": -74.379954,
+      "drive_min": 58,
+      "drive_mi": 38.5,
+      "geocode_src": "census",
+      "match": "753 STATE RTE 18, EAST BRUNSWICK, NJ, 08816"
+    },
+    "2980": {
+      "lat": 40.846525,
+      "lon": -74.467457,
+      "drive_min": 52,
+      "drive_mi": 36.1,
+      "geocode_src": "census",
+      "match": "1940 STATE RTE 10, MORRIS PLAINS, NJ, 07950"
+    },
+    "2905": {
+      "lat": 41.095204,
+      "lon": -73.958161,
+      "drive_min": 59,
+      "drive_mi": 33.9,
+      "geocode_src": "census",
+      "match": "4416 PALISADES CENTER DR, WEST NYACK, NY, 10994"
+    },
+    "2609": {
+      "lat": 40.257579,
+      "lon": -74.290988,
+      "drive_min": 72,
+      "drive_mi": 46.3,
+      "geocode_src": "nominatim",
+      "match": "3981, US Highway 9, Freehold Township, Monmouth County, New Jersey, 07"
+    },
+    "2140": {
+      "lat": 40.577473,
+      "lon": -74.629517,
+      "drive_min": 64,
+      "drive_mi": 46.3,
+      "geocode_src": "nominatim",
+      "match": "Barnes & Noble, Easton Turnpike, Bridgewater Township, Somerset County"
+    },
+    "3448": {
+      "lat": 40.963221,
+      "lon": -74.076572,
+      "drive_min": 40,
+      "drive_mi": 24.8,
+      "geocode_src": "census",
+      "match": "634 STATE RTE 17, PARAMUS, NJ, 07652"
+    },
+    "3421": {
+      "lat": 40.410596,
+      "lon": -74.144131,
+      "drive_min": 64,
+      "drive_mi": 41.2,
+      "geocode_src": "nominatim",
+      "match": "Barnes & Noble, 2130, Commons Way, Centerville, Holmdel Township, Monm"
+    },
+    "2897": {
+      "lat": 41.325707,
+      "lon": -73.849331,
+      "drive_min": 84,
+      "drive_mi": 54.4,
+      "geocode_src": "census",
+      "match": "3089 E MAIN ST, MOHEGAN LAKE, NY, 10547"
+    },
+    "3424": {
+      "lat": 40.690425,
+      "lon": -74.297141,
+      "drive_min": 37,
+      "drive_mi": 22.5,
+      "geocode_src": "census",
+      "match": "2401 US HWY 22, UNION, NJ, 07083"
+    },
+    "2215": {
+      "lat": 41.502263,
+      "lon": -74.070185,
+      "drive_min": 92,
+      "drive_mi": 68.0,
+      "geocode_src": "census",
+      "match": "1245 STATE RTE 300, NEWBURGH, NY, 12550"
+    },
+    "1977": {
+      "lat": 40.885498,
+      "lon": -74.212025,
+      "drive_min": 36,
+      "drive_mi": 21.7,
+      "geocode_src": "nominatim-poi",
+      "match": "Plaza 46, Woodland Park, Passaic County, New Jersey, United States"
+    },
+    "2886": {
+      "lat": 41.66018,
+      "lon": -73.930197,
+      "drive_min": 118,
+      "drive_mi": 83.7,
+      "geocode_src": "census",
+      "match": "2518 SOUTH RD, POUGHKEEPSIE, NY, 12601"
+    },
+    "3468": {
+      "lat": 40.873293,
+      "lon": -74.651312,
+      "drive_min": 69,
+      "drive_mi": 47.4,
+      "geocode_src": "nominatim-poi",
+      "match": "The Shops at Ledgewood Commons, Ledgewood, Roxbury Township, Morris Co"
+    },
+    "3405": {
+      "lat": 41.9723,
+      "lon": -73.9971,
+      "drive_min": 133,
+      "drive_mi": 102.3,
+      "geocode_src": "manual",
+      "match": "1200 Ulster Ave, Kingston NY (B&N)"
+    },
+    "3311": {
+      "lat": 40.906807,
+      "lon": -74.033119,
+      "drive_min": 37,
+      "drive_mi": 19.7,
+      "geocode_src": "census",
+      "match": "390 HACKENSACK AVE, HACKENSACK, NJ, 07601"
+    },
+    "3558": {
+      "lat": 40.63174,
+      "lon": -74.306919,
+      "drive_min": 41,
+      "drive_mi": 24.2,
+      "geocode_src": "census",
+      "match": "1255 RARITAN RD, CLARK, NJ, 07066"
+    },
+    "2340": {
+      "lat": 40.799263,
+      "lon": -74.341223,
+      "drive_min": 46,
+      "drive_mi": 24.5,
+      "geocode_src": "nominatim",
+      "match": "Eisenhower Parkway, Morehousetown, Livingston, Essex County, New Jerse"
+    },
+    "3590": {
+      "lat": 40.796686,
+      "lon": -74.346557,
+      "drive_min": 46,
+      "drive_mi": 26.0,
+      "geocode_src": "census",
+      "match": "530 W MOUNT PLEASANT AVE, LIVINGSTON, NJ, 07039"
+    },
+    "3304": {
+      "lat": 40.971934,
+      "lon": -73.804817,
+      "drive_min": 46,
+      "drive_mi": 27.0,
+      "geocode_src": "census",
+      "match": "680 POST RD, SCARSDALE, NY, 10583"
+    },
+    "3626": {
+      "lat": 40.927549,
+      "lon": -74.268393,
+      "drive_min": 40,
+      "drive_mi": 26.2,
+      "geocode_src": "census",
+      "match": "1308 STATE RTE 23, WAYNE, NJ, 07470"
+    },
+    "3445": {
+      "lat": 41.022785,
+      "lon": -73.794402,
+      "drive_min": 55,
+      "drive_mi": 29.9,
+      "geocode_src": "census",
+      "match": "381 N CENTRAL AVE, HARTSDALE, NY, 10530"
+    },
+    "3591": {
+      "lat": 40.424486,
+      "lon": -74.379841,
+      "drive_min": 58,
+      "drive_mi": 38.5,
+      "geocode_src": "census",
+      "match": "755 STATE RTE 18, EAST BRUNSWICK, NJ, 08816"
+    },
+    "3422": {
+      "lat": 40.292516,
+      "lon": -74.052327,
+      "drive_min": 74,
+      "drive_mi": 51.6,
+      "geocode_src": "census",
+      "match": "180 STATE RTE 35, EATONTOWN, NJ, 07724"
+    },
+    "3488": {
+      "lat": 41.20676,
+      "lon": -73.729478,
+      "drive_min": 71,
+      "drive_mi": 45.3,
+      "geocode_src": "census",
+      "match": "55 S MOGER AVE, MOUNT KISCO, NY, 10549"
+    },
+    "2368": {
+      "lat": 40.317912,
+      "lon": -74.654664,
+      "drive_min": 78,
+      "drive_mi": 52.5,
+      "geocode_src": "census",
+      "match": "3535 US HWY 1, PRINCETON, NJ, 08540"
+    },
+    "2803": {
+      "lat": 40.057749,
+      "lon": -74.139298,
+      "drive_min": 94,
+      "drive_mi": 66.5,
+      "geocode_src": "nominatim-poi",
+      "match": "Barnes & Noble, 44, Brick Boulevard, Brick Plaza, Brick Township, Ocea"
+    },
+    "2217": {
+      "lat": 40.19554,
+      "lon": -74.64138,
+      "drive_min": 86,
+      "drive_mi": 60.6,
+      "geocode_src": "nominatim",
+      "match": "Tesla Supercharger, 425, Marketplace Boulevard, Hamilton Marketplace, "
+    },
+    "3624": {
+      "lat": 41.453548,
+      "lon": -74.363803,
+      "drive_min": 98,
+      "drive_mi": 70.9,
+      "geocode_src": "census",
+      "match": "1 GALLERIA DR, MIDDLETOWN, NY, 10941"
+    }
+  }
+}
