@@ -71,6 +71,7 @@ Keep the report quiet, clean, and table-first. It should feel like a field guide
 Current design choices to preserve:
 
 - Warm paper/bookstore palette.
+- **Browser-tab favicon (added 2026-06-15):** an original **open-book** mark on a rounded **amber `#b1762b`** tile with a cream glyph. Files at repo root: `favicon.svg` (primary), multi-res `favicon.ico` (16/32/48 for Safari/older), `apple-touch-icon.png` (180, full-bleed), plus a `theme-color` meta. It is **not** the Barnes & Noble logo (trademarked) — a self-made bookstore mark. Orlando uses the **same mark in green `#4f6a3c`** so the two tabs are distinguishable at a glance. Regenerate from the SVG with `rsvg-convert` (render PNGs) + Pillow (`Image.save(..., format="ICO", sizes=[(16,16),(32,32),(48,48)])`) if the palette changes.
 - Compact top metrics.
 - Three-card scored shortlist.
 - Sortable, searchable, filterable table.
